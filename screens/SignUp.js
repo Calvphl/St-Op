@@ -4,9 +4,11 @@ import {
   Text,
   Image,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   TextInput,
   StyleSheet,
   KeyboardAvoidingView,
+  Keyboard,
 } from "react-native";
 import { COLORS, SIZES, images } from "../constants";
 import { Ionicons, Feather } from "@expo/vector-icons";
@@ -220,38 +222,40 @@ const SignUp = ({ navigation }) => {
   }
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "android" ? null : "position"}
-      style={{ flex: 1 }}
-    >
-      <ScrollView>
-        <View style={{ marginTop: 47, marginHorizontal: SIZES.padding2 * 2 }}>
-          <TouchableOpacity onPress={() => navigation.navigate("Open")}>
-            <Ionicons name="close" size={36} color={COLORS.black} />
-          </TouchableOpacity>
-          <View style={{ marginTop: 37 }}>
-            <Text
-              style={{
-                fontSize: SIZES.h1,
-                fontFamily: "Roboto",
-                color: COLORS.black,
-              }}
-            >
-              Daftarkan Diri Anda
-            </Text>
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "android" ? null : "position"}
+        style={{ flex: 1 }}
+      >
+        <ScrollView>
+          <View style={{ marginTop: 47, marginHorizontal: SIZES.padding2 * 2 }}>
+            <TouchableOpacity onPress={() => navigation.navigate("Open")}>
+              <Ionicons name="close" size={36} color={COLORS.black} />
+            </TouchableOpacity>
+            <View style={{ marginTop: 37 }}>
+              <Text
+                style={{
+                  fontSize: SIZES.h1,
+                  fontFamily: "Roboto",
+                  color: COLORS.black,
+                }}
+              >
+                Daftarkan Diri Anda
+              </Text>
+            </View>
+            <View style={{ alignItems: "center", marginTop: 13 }}>
+              <Image
+                source={images.avatar}
+                resizeMode="contain"
+                style={{ width: 82 }}
+              />
+            </View>
+            <View style={{ marginTop: SIZES.padding1 }}>{formSignUp()}</View>
+            <View style={{ marginTop: 20 }}>{okeBtn()}</View>
           </View>
-          <View style={{ alignItems: "center", marginTop: 13 }}>
-            <Image
-              source={images.avatar}
-              resizeMode="contain"
-              style={{ width: 82 }}
-            />
-          </View>
-          <View style={{ marginTop: SIZES.padding1 }}>{formSignUp()}</View>
-          <View style={{ marginTop: 20 }}>{okeBtn()}</View>
-        </View>
-      </ScrollView>
-    </KeyboardAvoidingView>
+        </ScrollView>
+      </KeyboardAvoidingView>
+    </TouchableWithoutFeedback>
   );
 };
 
