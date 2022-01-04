@@ -88,7 +88,7 @@ const SignIn = ({ navigation }) => {
           alignItems: "center",
           justifyContent: "center",
         }}
-        onPress={() => console.log("Oke")}
+        onPress={() => navigation.navigate("TimIn")}
       >
         <Text
           style={{

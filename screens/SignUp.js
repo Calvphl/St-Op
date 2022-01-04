@@ -19,10 +19,10 @@ const SignUp = ({ navigation }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [isFocus, setIsFocus] = useState(false);
   const data = [
-    { label: "Tipe keanggotaan", value: 1 },
-    { label: "Pustakawan Senior", value: 2 },
-    { label: "Pustakawan", value: 3 },
-    { label: "Staff", value: 4 },
+    // { label: "Tipe keanggotaan", value: 1 },
+    { label: "Pustakawan Senior", value: 1 },
+    { label: "Pustakawan", value: 2 },
+    { label: "Staff", value: 3 },
   ];
 
   function dropDownComponent() {
@@ -34,10 +34,10 @@ const SignUp = ({ navigation }) => {
           style={[styles.dropdown, isFocus && { borderColor: COLORS.primary }]}
           selectedTextStyle={styles.selectedTextStyle}
           data={data}
-          maxHeight={220}
+          maxHeight={160}
           labelField="label"
           valueField="value"
-          placeholder={!isFocus ? "Tipe Keanggotaan" : "..."}
+          placeholder={!isFocus ? "Tipe keanggotaan" : "Pilih tipe keanggotaan"}
           placeholderStyle={styles.placeholder}
           value={value}
           onFocus={() => setIsFocus(true)}
@@ -205,7 +205,7 @@ const SignUp = ({ navigation }) => {
           alignItems: "center",
           justifyContent: "center",
         }}
-        onPress={() => console.log("Oke")}
+        onPress={() => navigation.navigate("Tim")}
       >
         <Text
           style={{
