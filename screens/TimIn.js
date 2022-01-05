@@ -68,6 +68,7 @@ const TimIn = ({ navigation }) => {
       </View>
 
       <TouchableOpacity
+        onPress={() => navigation.navigate("CreateTeamIn")}
         style={{
           borderWidth: 1,
           borderColor: COLORS.white,

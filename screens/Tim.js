@@ -68,6 +68,7 @@ const Tim = ({ navigation }) => {
       </View>
 
       <TouchableOpacity
+        onPress={() => navigation.navigate("CreateTeam")}
         style={{
           borderWidth: 1,
           borderColor: COLORS.white,
@@ -87,7 +88,8 @@ const Tim = ({ navigation }) => {
           paddingLeft: SIZES.padding2 + 10,
         }}
       >
-        <View
+        <TouchableOpacity
+          onPress={() => navigation.navigate("CreateTeam")}
           style={{
             marginLeft: 6,
             // maxWidth: 234,
@@ -110,7 +112,7 @@ const Tim = ({ navigation }) => {
           >
             Buat Tim Baru
           </Text>
-        </View>
+        </TouchableOpacity>
         <View style={{ position: "absolute", top: 67, left: 63 }}>
           <Text
             style={{
