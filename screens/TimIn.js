@@ -147,6 +147,7 @@ const TimIn = ({ navigation }) => {
                     alignItems: "center",
                     borderRadius: SIZES.radius,
                   }}
+                  onPress={() => navigation.navigate("Beranda")}
                 >
                   <Text style={{ color: COLORS.white, fontSize: SIZES.h3 }}>
                     Lanjut

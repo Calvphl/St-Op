@@ -24,44 +24,130 @@ const Tabs = () => {
           right: 0,
           borderTopWidth: 0,
           unmountOnBlur: false,
+          paddingLeft: 10,
+          paddingRight: 10,
         },
         tabBarLabelStyle: {
-          fontSize: 14,
           paddingBottom: 5,
-          // color: "green",
-          // activeColor: "#f05a5a",
-          // inactiveTintColor: "yellow",
         },
-        // tabBarLabelStyle: ({ focused }) => ({
-        //   color: focused ? "red" : "yellow",
-        // }),
       }}
     >
       <Tab.Screen
         name="Beranda"
         component={Beranda}
         options={{
-          // tabBarOptions: {
-          // activeTintColor: "#f05a5a",
-          // inactiveTintColor: "yellow",
-          // },
           headerTitile: false,
-          tabBarLabel: "Beranda",
+          tabBarLabel: ({ focused }) => (
+            <Text
+              style={{
+                color: focused ? COLORS.primary : COLORS.grey,
+                paddingBottom: 8,
+                fontSize: 14,
+                fontWeight: focused ? "bold" : "normal",
+              }}
+            >
+              Beranda
+            </Text>
+          ),
           tabBarIcon: ({ focused }) => (
             <MaterialIcons
               name="home"
               color={focused ? COLORS.primary : COLORS.grey}
               size={32}
               style={{
-                marginTop: 1,
+                marginTop: 5,
               }}
             />
           ),
         }}
       />
-      <Tab.Screen name="Bibliografi" component={Bibliografi} />
-      <Tab.Screen name="Aktivitas" component={Aktivitas} />
-      <Tab.Screen name="Pengaturan" component={Pengaturan} />
+      <Tab.Screen
+        name="Bibliografi"
+        component={Bibliografi}
+        options={{
+          headerTitile: false,
+          tabBarLabel: ({ focused }) => (
+            <Text
+              style={{
+                color: focused ? COLORS.primary : COLORS.grey,
+                paddingBottom: 8,
+                fontSize: 14,
+                fontWeight: focused ? "bold" : "normal",
+              }}
+            >
+              Bibliografi
+            </Text>
+          ),
+          tabBarIcon: ({ focused }) => (
+            <MaterialIcons
+              name="book"
+              color={focused ? COLORS.primary : COLORS.grey}
+              size={28}
+              style={{
+                marginTop: 5,
+              }}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Aktivitas"
+        component={Aktivitas}
+        options={{
+          headerTitile: false,
+          tabBarLabel: ({ focused }) => (
+            <Text
+              style={{
+                color: focused ? COLORS.primary : COLORS.grey,
+                paddingBottom: 8,
+                fontSize: 14,
+                fontWeight: focused ? "bold" : "normal",
+              }}
+            >
+              Aktivitas
+            </Text>
+          ),
+          tabBarIcon: ({ focused }) => (
+            <MaterialIcons
+              name="list-alt"
+              color={focused ? COLORS.primary : COLORS.grey}
+              size={28}
+              style={{
+                marginTop: 5,
+              }}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Pengaturan"
+        component={Pengaturan}
+        options={{
+          headerTitile: false,
+          tabBarLabel: ({ focused }) => (
+            <Text
+              style={{
+                color: focused ? COLORS.primary : COLORS.grey,
+                paddingBottom: 8,
+                fontSize: 14,
+                fontWeight: focused ? "bold" : "normal",
+              }}
+            >
+              Pengaturan
+            </Text>
+          ),
+          tabBarIcon: ({ focused }) => (
+            <MaterialIcons
+              name="settings"
+              color={focused ? COLORS.primary : COLORS.grey}
+              size={28}
+              style={{
+                marginTop: 5,
+              }}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };
