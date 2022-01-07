@@ -42,7 +42,7 @@ const Open = ({ navigation }) => {
         <TouchableOpacity
           style={{
             height: 55,
-            backgroundColor: COLORS.white,
+            backgroundColor: "#f7f7f7",
             borderRadius: SIZES.radius,
             borderWidth: 2,
             borderColor: COLORS.primary,

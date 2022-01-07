@@ -97,7 +97,7 @@ const CreateTeam = ({ navigation }) => {
           alignItems: "center",
           justifyContent: "center",
         }}
-        onPress={() => console.log("NEXT")}
+        onPress={() => navigation.navigate("Beranda")}
       >
         <Text
           style={{

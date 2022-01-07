@@ -9,22 +9,15 @@ import {
   CreateTeam,
   CreateTeamIn,
 } from "./screens";
+import Tabs from "./navigation/tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
-
-const theme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors.background,
-    border: "transparent",
-  },
-};
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer theme={theme}>
+    <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
         initialRouteName={"Open"}
@@ -36,6 +29,7 @@ export default function App() {
         <Stack.Screen name="TimIn" component={TimIn} />
         <Stack.Screen name="CreateTeam" component={CreateTeam} />
         <Stack.Screen name="CreateTeamIn" component={CreateTeamIn} />
+        <Stack.Screen name="Beranda" component={Tabs} />
       </Stack.Navigator>
     </NavigationContainer>
 

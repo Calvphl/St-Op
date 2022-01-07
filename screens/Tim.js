@@ -15,7 +15,6 @@ import { SIZES, COLORS, icons } from "../constants";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const Tim = ({ navigation }) => {
-  // const [selectedArea, setSelectedArea] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
 
   function headerComponent() {
@@ -198,14 +197,16 @@ const Tim = ({ navigation }) => {
           <TouchableOpacity
             onPress={() => navigation.navigate("CreateTeam")}
             style={{
-              borderWidth: 1,
-              borderColor: COLORS.white,
+              // borderWidth: 1,
+              // borderColor: COLORS.white,
               width: 350,
               height: 137,
-              shadowColor: "#d8d8d8",
+              shadowColor: "#c7c7c7",
+              backgroundColor: "#f7f7f7",
               shadowOffset: { width: 0, height: 1 },
               shadowOpacity: 0.8,
-              shadowRadius: 8,
+              shadowRadius: SIZES.radius,
+              borderRadius: SIZES.radius,
               elevation: 5,
               marginHorizontal: SIZES.padding2 * 2,
               marginTop: 36,
@@ -254,14 +255,16 @@ const Tim = ({ navigation }) => {
 
           <TouchableOpacity
             style={{
-              borderWidth: 1,
-              borderColor: COLORS.white,
+              // borderWidth: 1,
+              // borderColor: COLORS.white,
               width: 350,
               height: 137,
-              shadowColor: "#d8d8d8",
+              shadowColor: "#c7c7c7",
+              backgroundColor: "#f7f7f7",
               shadowOffset: { width: 0, height: 1 },
               shadowOpacity: 0.8,
-              shadowRadius: 8,
+              shadowRadius: SIZES.radius,
+              borderRadius: SIZES.radius,
               elevation: 5,
               marginHorizontal: SIZES.padding2 * 2,
               marginTop: 16,
