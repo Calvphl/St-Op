@@ -19,6 +19,7 @@ const sorting = require("../assets/icons/sorting.png");
 const team = require("../assets/icons/team.png");
 const book = require("../assets/icons/book.png");
 const addTeam = require("../assets/icons/add-team.png");
+const history = require("../assets/icons/history.png");
 
 export default {
   arrow,
@@ -42,4 +43,5 @@ export default {
   team,
   book,
   addTeam,
+  history,
 };

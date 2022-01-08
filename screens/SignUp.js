@@ -19,7 +19,6 @@ const SignUp = ({ navigation }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [isFocus, setIsFocus] = useState(false);
   const data = [
-    // { label: "Tipe keanggotaan", value: 1 },
     { label: "Pustakawan Senior", value: 1 },
     { label: "Pustakawan", value: 2 },
     { label: "Staff", value: 3 },
