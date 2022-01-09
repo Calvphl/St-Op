@@ -16,7 +16,7 @@ import {
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
 
-const Aktivitas = () => {
+const Aktivitas = ({ navigation }) => {
   function renderSearch() {
     return (
       <>
@@ -30,23 +30,6 @@ const Aktivitas = () => {
         >
           <Ionicons name="ios-search" size={22} color={COLORS.grey} />
         </TouchableOpacity>
-        {/* <TouchableOpacity
-          style={{
-            position: "absolute",
-            top: 149,
-            left: 318,
-            zIndex: 10,
-            borderLeftColor: COLORS.grey,
-            borderLeftWidth: 1,
-            paddingLeft: 12,
-          }}
-        >
-          <MaterialCommunityIcons
-            name="barcode-scan"
-            size={22}
-            color={COLORS.primary}
-          />
-        </TouchableOpacity> */}
         <TextInput
           placeholder="Cari"
           placeholderTextColor={COLORS.grey}
@@ -75,8 +58,13 @@ const Aktivitas = () => {
   }
 
   function renderNote() {
+    const gotoDetail = () => {
+      navigation.navigate("Detail");
+    };
+
     return (
       <TouchableOpacity
+        onPress={gotoDetail}
         style={{
           marginTop: 30,
           marginBottom: 20,
@@ -144,10 +132,10 @@ const Aktivitas = () => {
       </View>
       {renderSearch()}
       {renderNote()}
+      {/* {renderNote()}
       {renderNote()}
       {renderNote()}
-      {renderNote()}
-      {renderNote()}
+      {renderNote()} */}
     </ScrollView>
   );
 };

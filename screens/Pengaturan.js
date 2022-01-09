@@ -8,15 +8,6 @@ import {
   FontAwesome,
 } from "@expo/vector-icons";
 
-{
-  /* <MaterialIcons
-  name="keyboard-arrow-right"
-  size={25}
-  color={COLORS.grey}
-  style={{ marginTop: 9 }}
-/>; */
-}
-
 const Pengaturan = () => {
   function headerComponent() {
     return (
@@ -63,7 +54,6 @@ const Pengaturan = () => {
         {/* Banner */}
         <Image
           source={images.banner}
-          // resizeMode="contain"
           style={{
             height: 155,
             width: 355,
@@ -289,8 +279,6 @@ const Pengaturan = () => {
             color={COLORS.primary}
             style={{ marginRight: 7 }}
           />
-          {/* <Ionicons name="add-circle-sharp" size={17} color={COLORS.primary}
-            style={{ marginRight: 7 }} /> */}
           <Text
             style={{
               fontSize: SIZES.sub,

@@ -9,6 +9,7 @@ import Beranda from "./Beranda";
 import Bibliografi from "./Bibliografi";
 import Aktivitas from "./Aktivitas";
 import Pengaturan from "./Pengaturan";
+import Detail from "./Detail";
 
 export {
   SignIn,
@@ -22,4 +23,5 @@ export {
   Bibliografi,
   Aktivitas,
   Pengaturan,
+  Detail,
 };

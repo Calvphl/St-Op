@@ -8,10 +8,11 @@ import {
   TimIn,
   CreateTeam,
   CreateTeamIn,
+  Detail,
 } from "./screens";
 import Tabs from "./navigation/tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 
 const Stack = createStackNavigator();
 
@@ -30,6 +31,7 @@ export default function App() {
         <Stack.Screen name="CreateTeam" component={CreateTeam} />
         <Stack.Screen name="CreateTeamIn" component={CreateTeamIn} />
         <Stack.Screen name="Beranda" component={Tabs} />
+        <Stack.Screen name="Detail" component={Detail} />
       </Stack.Navigator>
     </NavigationContainer>
 
