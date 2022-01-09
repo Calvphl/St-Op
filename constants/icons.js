@@ -20,6 +20,7 @@ const team = require("../assets/icons/team.png");
 const book = require("../assets/icons/book.png");
 const addTeam = require("../assets/icons/add-team.png");
 const history = require("../assets/icons/history.png");
+const send = require("../assets/icons/send.png");
 
 export default {
   arrow,
@@ -44,4 +45,5 @@ export default {
   book,
   addTeam,
   history,
+  send,
 };

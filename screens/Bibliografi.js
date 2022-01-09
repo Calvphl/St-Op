@@ -20,136 +20,144 @@ import {
 } from "@expo/vector-icons";
 import { Dropdown } from "react-native-element-dropdown";
 
-function headerComponent() {
-  return (
-    <View
-      style={{
-        height: 82,
-      }}
-    >
-      <View
-        style={{
-          marginHorizontal: SIZES.padding2 * 2,
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          marginTop: 38,
-        }}
-      >
-        <TouchableOpacity>
-          <FontAwesome5 name="sort" size={31} color={COLORS.black} />
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-}
-
-function renderSearch() {
-  return (
-    <>
-      <TouchableOpacity
-        style={{
-          position: "absolute",
-          top: 148,
-          left: 35,
-          zIndex: 10,
-        }}
-      >
-        <Ionicons name="ios-search" size={22} color={COLORS.grey} />
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={{
-          position: "absolute",
-          top: 149,
-          left: 318,
-          zIndex: 10,
-          borderLeftColor: COLORS.grey,
-          borderLeftWidth: 1,
-          paddingLeft: 12,
-        }}
-      >
-        <MaterialCommunityIcons
-          name="barcode-scan"
-          size={22}
-          color={COLORS.primary}
-        />
-      </TouchableOpacity>
-      <TextInput
-        placeholder="Judul, kode bar, kategori"
-        placeholderTextColor={COLORS.grey}
-        style={{
-          fontSize: SIZES.sub,
-          justifyContent: "center",
-          marginTop: 20,
-          height: 46,
-          backgroundColor: COLORS.white,
-          borderRadius: SIZES.radius,
-          paddingLeft: 52,
-          paddingRight: 70,
-          color: COLORS.primary,
-          marginHorizontal: SIZES.padding2 * 2,
-        }}
-      />
-      <View
-        style={{
-          borderBottomWidth: 2,
-          borderBottomColor: "#ececec",
-          marginTop: 14,
-        }}
-      ></View>
-    </>
-  );
-}
-
-function mainContent() {
-  return (
-    <TouchableOpacity
-      style={{
-        flexDirection: "row",
-        paddingHorizontal: SIZES.padding2 * 2,
-        alignItems: "center",
-      }}
-    >
-      <Image source={images.book} resizeMode="contain" style={{ width: 80 }} />
-      <View style={{ marginLeft: 20 }}>
-        <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-          Buku 1
-        </Text>
-        <View
-          style={{
-            flexDirection: "row",
-            color: COLORS.black,
-            opacity: 0.5,
-            marginTop: 13,
-          }}
-        >
-          <Text>Sains |</Text>
-          <Text> A02 |</Text>
-          <Text> 2015</Text>
-        </View>
-      </View>
-      <View style={{ marginLeft: 120 }}>
-        <Text
-          style={{
-            fontSize: SIZES.h3,
-            fontWeight: "bold",
-            color: COLORS.primary,
-          }}
-        >
-          5
-        </Text>
-      </View>
-    </TouchableOpacity>
-  );
-}
-
-const Bibliografi = () => {
+const Bibliografi = ({ navigation }) => {
   const [isFocus, setIsFocus] = useState(false);
   const data = [
     { label: "Lihat Semua", value: 1 },
     { label: "Nama Buku", value: 2 },
     { label: "Tahun Terbit", value: 3 },
   ];
+
+  function headerComponent() {
+    return (
+      <View
+        style={{
+          height: 82,
+        }}
+      >
+        <View
+          style={{
+            marginHorizontal: SIZES.padding2 * 2,
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            marginTop: 38,
+          }}
+        >
+          <TouchableOpacity>
+            <FontAwesome5 name="sort" size={31} color={COLORS.black} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
+
+  function renderSearch() {
+    return (
+      <>
+        <TouchableOpacity
+          style={{
+            position: "absolute",
+            top: 148,
+            left: 35,
+            zIndex: 10,
+          }}
+        >
+          <Ionicons name="ios-search" size={22} color={COLORS.grey} />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            position: "absolute",
+            top: 149,
+            left: 318,
+            zIndex: 10,
+            borderLeftColor: COLORS.grey,
+            borderLeftWidth: 1,
+            paddingLeft: 12,
+          }}
+        >
+          <MaterialCommunityIcons
+            name="barcode-scan"
+            size={22}
+            color={COLORS.primary}
+          />
+        </TouchableOpacity>
+        <TextInput
+          placeholder="Judul, kode bar, kategori"
+          placeholderTextColor={COLORS.grey}
+          style={{
+            fontSize: SIZES.sub,
+            justifyContent: "center",
+            marginTop: 20,
+            height: 46,
+            backgroundColor: COLORS.white,
+            borderRadius: SIZES.radius,
+            paddingLeft: 52,
+            paddingRight: 70,
+            color: COLORS.primary,
+            marginHorizontal: SIZES.padding2 * 2,
+          }}
+        />
+        <View
+          style={{
+            borderBottomWidth: 2,
+            borderBottomColor: "#ececec",
+            marginTop: 14,
+          }}
+        ></View>
+      </>
+    );
+  }
+
+  function mainContent() {
+    const gotoDetail = () => {
+      navigation.navigate("Detail");
+    };
+    return (
+      <TouchableOpacity
+        onPress={gotoDetail}
+        style={{
+          flexDirection: "row",
+          paddingHorizontal: SIZES.padding2 * 2,
+          alignItems: "center",
+        }}
+      >
+        <Image
+          source={images.book}
+          resizeMode="contain"
+          style={{ width: 80 }}
+        />
+        <View style={{ marginLeft: 20 }}>
+          <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+            Buku 1
+          </Text>
+          <View
+            style={{
+              flexDirection: "row",
+              color: COLORS.black,
+              opacity: 0.5,
+              marginTop: 13,
+            }}
+          >
+            <Text>Sains |</Text>
+            <Text> A02 |</Text>
+            <Text> 2015</Text>
+          </View>
+        </View>
+        <View style={{ marginLeft: 120 }}>
+          <Text
+            style={{
+              fontSize: SIZES.h3,
+              fontWeight: "bold",
+              color: COLORS.primary,
+            }}
+          >
+            5
+          </Text>
+        </View>
+      </TouchableOpacity>
+    );
+  }
 
   function dropDownComponent() {
     const [value, setValue] = useState(null);

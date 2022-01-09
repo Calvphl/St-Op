@@ -12,7 +12,7 @@ import { SIZES, COLORS, icons, images } from "../constants";
 const Detail = ({ navigation }) => {
   function headerComponent() {
     const backToAktivitas = () => {
-      navigation.navigate("Aktivitas");
+      navigation.navigate("Bibliografi");
     };
     return (
       <View

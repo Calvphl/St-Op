@@ -58,13 +58,13 @@ const Aktivitas = ({ navigation }) => {
   }
 
   function renderNote() {
-    const gotoDetail = () => {
-      navigation.navigate("Detail");
-    };
+    // const gotoDetail = () => {
+    //   navigation.navigate("Detail");
+    // };
 
     return (
       <TouchableOpacity
-        onPress={gotoDetail}
+        // onPress={gotoDetail}
         style={{
           marginTop: 30,
           marginBottom: 20,
@@ -132,10 +132,9 @@ const Aktivitas = ({ navigation }) => {
       </View>
       {renderSearch()}
       {renderNote()}
-      {/* {renderNote()}
       {renderNote()}
       {renderNote()}
-      {renderNote()} */}
+      {renderNote()}
     </ScrollView>
   );
 };

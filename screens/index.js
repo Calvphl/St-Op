@@ -10,6 +10,8 @@ import Bibliografi from "./Bibliografi";
 import Aktivitas from "./Aktivitas";
 import Pengaturan from "./Pengaturan";
 import Detail from "./Detail";
+import Resinkronisasi from "./Resinkronisasi";
+import UndangAnggota from "./UndangAnggota";
 
 export {
   SignIn,
@@ -24,4 +26,6 @@ export {
   Aktivitas,
   Pengaturan,
   Detail,
+  Resinkronisasi,
+  UndangAnggota,
 };

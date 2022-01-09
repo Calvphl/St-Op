@@ -9,6 +9,8 @@ import {
   CreateTeam,
   CreateTeamIn,
   Detail,
+  Resinkronisasi,
+  UndangAnggota,
 } from "./screens";
 import Tabs from "./navigation/tabs";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -32,6 +34,8 @@ export default function App() {
         <Stack.Screen name="CreateTeamIn" component={CreateTeamIn} />
         <Stack.Screen name="Beranda" component={Tabs} />
         <Stack.Screen name="Detail" component={Detail} />
+        <Stack.Screen name="Resinkronisasi" component={Resinkronisasi} />
+        <Stack.Screen name="UndangAnggota" component={UndangAnggota} />
       </Stack.Navigator>
     </NavigationContainer>
 

@@ -312,6 +312,9 @@ const Beranda = ({ navigation }) => {
   }
 
   function tambahKoleksiBuku() {
+    const gotoResinkronisasi = () => {
+      navigation.navigate("Resinkronisasi");
+    };
     return (
       <View
         style={{
@@ -384,6 +387,7 @@ const Beranda = ({ navigation }) => {
 
         {/* resinkronasi */}
         <TouchableOpacity
+          onPress={gotoResinkronisasi}
           style={{ flexDirection: "row", justifyContent: "space-between" }}
         >
           <View>
@@ -410,6 +414,9 @@ const Beranda = ({ navigation }) => {
   }
 
   function tambahAnggota() {
+    const gotoUndangAnggota = () => {
+      navigation.navigate("UndangAnggota");
+    };
     return (
       <View
         style={{
@@ -432,6 +439,7 @@ const Beranda = ({ navigation }) => {
           Tambah Anggota
         </Text>
         <TouchableOpacity
+          onPress={gotoUndangAnggota}
           style={{ flexDirection: "row", justifyContent: "space-between" }}
         >
           <View>
