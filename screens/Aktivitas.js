@@ -10,7 +10,11 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import { SIZES, COLORS, icons, images } from "../constants";
-import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import {
+  Ionicons,
+  MaterialIcons,
+  MaterialCommunityIcons,
+} from "@expo/vector-icons";
 
 const Aktivitas = () => {
   function renderSearch() {
@@ -19,21 +23,38 @@ const Aktivitas = () => {
         <TouchableOpacity
           style={{
             position: "absolute",
-            top: 153,
+            top: 148,
             left: 35,
-            zIndex: 5,
+            zIndex: 10,
           }}
         >
-          <Ionicons name="ios-search" size={25} color={COLORS.grey} />
+          <Ionicons name="ios-search" size={22} color={COLORS.grey} />
         </TouchableOpacity>
+        {/* <TouchableOpacity
+          style={{
+            position: "absolute",
+            top: 149,
+            left: 318,
+            zIndex: 10,
+            borderLeftColor: COLORS.grey,
+            borderLeftWidth: 1,
+            paddingLeft: 12,
+          }}
+        >
+          <MaterialCommunityIcons
+            name="barcode-scan"
+            size={22}
+            color={COLORS.primary}
+          />
+        </TouchableOpacity> */}
         <TextInput
           placeholder="Cari"
           placeholderTextColor={COLORS.grey}
           style={{
             fontSize: SIZES.h3,
             justifyContent: "center",
-            marginTop: 17,
-            height: 66,
+            marginTop: 20,
+            height: 46,
             backgroundColor: COLORS.white,
             borderRadius: SIZES.radius,
             paddingLeft: 52,
@@ -42,6 +63,13 @@ const Aktivitas = () => {
             marginHorizontal: SIZES.padding2 * 2,
           }}
         />
+        <View
+          style={{
+            borderBottomWidth: 2,
+            borderBottomColor: "#ececec",
+            marginTop: 14,
+          }}
+        ></View>
       </>
     );
   }

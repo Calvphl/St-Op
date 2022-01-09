@@ -35,7 +35,7 @@ const Beranda = ({ navigation }) => {
             <MaterialCommunityIcons
               name="bell-outline"
               size={31}
-              color="black"
+              color={COLORS.black}
             />
             <View
               style={{
