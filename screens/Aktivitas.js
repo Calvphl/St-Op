@@ -1,11 +1,126 @@
 import React from "react";
-import { View, Text } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  TextInput,
+  ScrollView,
+  Keyboard,
+  KeyboardAvoidingView,
+} from "react-native";
+import { SIZES, COLORS, icons, images } from "../constants";
+import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 
 const Aktivitas = () => {
+  function renderSearch() {
+    return (
+      <>
+        <TouchableOpacity
+          style={{
+            position: "absolute",
+            top: 153,
+            left: 35,
+            zIndex: 5,
+          }}
+        >
+          <Ionicons name="ios-search" size={25} color={COLORS.grey} />
+        </TouchableOpacity>
+        <TextInput
+          placeholder="Cari"
+          placeholderTextColor={COLORS.grey}
+          style={{
+            fontSize: SIZES.h3,
+            justifyContent: "center",
+            marginTop: 17,
+            height: 66,
+            backgroundColor: COLORS.white,
+            borderRadius: SIZES.radius,
+            paddingLeft: 52,
+            paddingRight: 20,
+            color: COLORS.primary,
+            marginHorizontal: SIZES.padding2 * 2,
+          }}
+        />
+      </>
+    );
+  }
+
+  function renderNote() {
+    return (
+      <TouchableOpacity
+        style={{
+          marginTop: 30,
+          marginBottom: 20,
+          paddingHorizontal: SIZES.padding2 * 2,
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <View>
+          <Text
+            style={{
+              fontSize: SIZES.body1,
+              fontWeight: "bold",
+              color: COLORS.black,
+            }}
+          >
+            14 Desember 2021
+          </Text>
+          <Text
+            style={{
+              fontSize: SIZES.body1,
+              fontWeight: "bold",
+              color: COLORS.black,
+            }}
+          >
+            09:23:43
+          </Text>
+          <Text
+            style={{
+              marginTop: 52,
+              fontSize: SIZES.body1,
+              color: COLORS.black,
+            }}
+          >
+            B02 | Sosial
+          </Text>
+        </View>
+        <View style={{ alignItems: "center" }}>
+          <Image
+            source={images.avatar}
+            resizeMode="contain"
+            style={{ width: 46, position: "relative", top: 20 }}
+          />
+          <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+            Akun 1
+          </Text>
+        </View>
+      </TouchableOpacity>
+    );
+  }
+
   return (
-    <View>
-      <Text>Aktivitas</Text>
-    </View>
+    <ScrollView style={{ marginBottom: 70 }}>
+      <View style={{ paddingHorizontal: SIZES.padding2 * 2, marginTop: 84 }}>
+        <Text
+          style={{
+            fontSize: SIZES.h2,
+            fontFamily: "Roboto",
+            fontWeight: "bold",
+            color: COLORS.black,
+          }}
+        >
+          Catatan Inventarisasi
+        </Text>
+      </View>
+      {renderSearch()}
+      {renderNote()}
+      {renderNote()}
+      {renderNote()}
+      {renderNote()}
+      {renderNote()}
+    </ScrollView>
   );
 };
 
