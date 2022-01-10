@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
+import React, { useState } from "react";
+import { View, Text, TouchableOpacity, Image, Switch } from "react-native";
 import { SIZES, COLORS, icons, images } from "../constants";
 import {
   MaterialCommunityIcons,
@@ -8,374 +8,203 @@ import {
   FontAwesome,
 } from "@expo/vector-icons";
 
-const Pengaturan = ({ navigation }) => {
+const PengaturanAkun = ({ navigation }) => {
+  const [toggle, setToggle] = useState(false);
+  const [toggleTwo, setToggleTwo] = useState(true);
+
   function headerComponent() {
-    const gotoPengaturanAkun = () => {
-      navigation.navigate("PengaturanAkun");
+    const backToAktivitas = () => {
+      navigation.navigate("Pengaturan");
     };
     return (
       <View
         style={{
-          height: 82,
+          paddingBottom: SIZES.padding2 + 5,
+          borderBottomWidth: 1,
+          borderBottomColor: COLORS.grey,
+          marginTop: 47,
         }}
       >
         <View
           style={{
             marginHorizontal: SIZES.padding2 * 2,
             flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "flex-end",
-            marginTop: 38,
+            justifyContent: "space-between",
           }}
         >
-          <TouchableOpacity onPress={gotoPengaturanAkun}>
-            <MaterialCommunityIcons
-              name="account-settings"
-              size={31}
-              color={COLORS.black}
-            />
-          </TouchableOpacity>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <TouchableOpacity onPress={backToAktivitas}>
+              <Ionicons name="chevron-back" size={36} color={COLORS.black} />
+            </TouchableOpacity>
+            <Text
+              style={{
+                fontSize: SIZES.body1,
+                color: COLORS.black,
+                marginLeft: 7,
+              }}
+            >
+              Pengaturan
+            </Text>
+          </View>
         </View>
       </View>
     );
   }
 
-  function banner() {
-    const gotoPilihTim = () => {
-      navigation.navigate("PilihTim");
-    };
+  function sectionOnePengaturanAkun() {
     return (
-      <View style={{ paddingHorizontal: SIZES.padding2 * 2 }}>
-        <Text
-          style={{
-            fontSize: SIZES.h2,
-            fontFamily: "Roboto",
-            fontWeight: "bold",
-            color: COLORS.black,
-          }}
-        >
-          Pengaturan
-        </Text>
+      <View
+        style={{
+          paddingHorizontal: SIZES.padding2 * 2,
+          position: "relative",
+          marginTop: 14,
+        }}
+      >
+        <View style={{ alignItems: "center" }}>
+          <Image
+            source={images.avatar}
+            resizeMode="contain"
+            style={{ width: 80, marginBottom: 30 }}
+          />
+        </View>
 
-        {/* Banner */}
-        <Image
-          source={images.banner}
-          style={{
-            height: 155,
-            width: 355,
-            borderRadius: SIZES.radius,
-            marginTop: 15,
-          }}
-        />
-        <View
-          style={{ marginHorizontal: 10, position: "relative", bottom: 140 }}
-        >
-          <TouchableOpacity
+        {/* Nama Pengguna */}
+        <View style={{ marginBottom: 14 }}>
+          <View
             style={{
               flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "flex-end",
+              justifyContent: "space-between",
+              marginBottom: 14,
             }}
           >
-            <View style={{ marginRight: 6 }}>
+            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+              Nama Pengguna
+            </Text>
+            <View style={{ flexDirection: "row" }}>
               <Text
                 style={{
-                  textAlign: "right",
-                  fontSize: 12,
-                  color: COLORS.white,
+                  maxWidth: 150,
+                  fontSize: SIZES.body1,
+                  color: COLORS.black,
                 }}
               >
-                Nama pengguna
+                Akun 1
               </Text>
+              <MaterialIcons
+                name="keyboard-arrow-right"
+                size={25}
+                color={COLORS.grey}
+                style={{ marginLeft: 5 }}
+              />
+            </View>
+          </View>
+        </View>
+
+        {/* Alamat Surel */}
+        <View style={{ marginBottom: 14 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginBottom: 14,
+            }}
+          >
+            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+              Alamat Surel
+            </Text>
+            <View style={{ flexDirection: "row" }}>
               <Text
                 style={{
-                  textAlign: "right",
-                  fontSize: 12,
-                  marginTop: 5,
-                  color: COLORS.white,
+                  maxWidth: 150,
+                  fontSize: SIZES.body1,
+                  color: COLORS.black,
+                }}
+              >
+                akun1@blabla.com
+              </Text>
+              <MaterialIcons
+                name="keyboard-arrow-right"
+                size={25}
+                color={COLORS.grey}
+                style={{ marginLeft: 5 }}
+              />
+            </View>
+          </View>
+        </View>
+
+        {/* Tipe Keanggotaan */}
+        <View style={{ marginBottom: 14 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginBottom: 14,
+            }}
+          >
+            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+              Tipe Keanggotaan
+            </Text>
+            <View style={{ flexDirection: "row" }}>
+              <Text
+                style={{
+                  maxWidth: 150,
+                  fontSize: SIZES.body1,
+                  color: COLORS.black,
                 }}
               >
                 Pustakawan
               </Text>
+              <MaterialIcons
+                name="keyboard-arrow-right"
+                size={25}
+                color={COLORS.grey}
+                style={{ marginLeft: 5 }}
+              />
             </View>
-            <Image source={images.akun} resizeMode="contain" />
-          </TouchableOpacity>
-          <View style={{ marginTop: 32 }}>
-            <Text
-              style={{
-                fontSize: SIZES.h3,
-                fontWeight: "bold",
-                color: COLORS.white,
-              }}
-            >
-              Stock Opname Tesis
-            </Text>
-            <Text style={{ fontSize: SIZES.body2, color: COLORS.white }}>
-              D01 - F04 | Anggota 14
-            </Text>
           </View>
         </View>
-        <TouchableOpacity
-          style={{ position: "relative", bottom: 115 }}
-          onPress={gotoPilihTim}
-        >
-          <Text
+
+        {/* Kata Sandi */}
+        <View style={{ marginBottom: 14 }}>
+          <View
             style={{
-              textAlign: "center",
-              fontSize: SIZES.h3,
-              color: COLORS.black,
-              fontWeight: "bold",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginBottom: 14,
             }}
           >
-            Ganti Tim
-          </Text>
-        </TouchableOpacity>
+            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+              Kata Sandi
+            </Text>
+            <View style={{ flexDirection: "row" }}>
+              <Text
+                style={{
+                  maxWidth: 150,
+                  fontSize: SIZES.body1,
+                  color: COLORS.black,
+                }}
+              >
+                sandi pake dot
+              </Text>
+              <MaterialIcons
+                name="keyboard-arrow-right"
+                size={25}
+                color={COLORS.grey}
+                style={{ marginLeft: 5 }}
+              />
+            </View>
+          </View>
+        </View>
       </View>
     );
   }
 
-  function kelolaTim() {
+  function sectionTwoPengaturanAkun() {
     return (
       <View
         style={{
           paddingHorizontal: SIZES.padding2 * 2,
-          position: "relative",
-          bottom: 80,
-        }}
-      >
-        <Text
-          style={{
-            fontSize: SIZES.h3,
-            fontWeight: "bold",
-            color: COLORS.black,
-            marginBottom: 12,
-          }}
-        >
-          Kelola Tim
-        </Text>
-
-        {/* Nama Tim */}
-        <View style={{ marginBottom: 14 }}>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              marginBottom: 14,
-            }}
-          >
-            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Nama Tim
-            </Text>
-            <View style={{ flexDirection: "row" }}>
-              <Text
-                style={{
-                  maxWidth: 150,
-                  fontSize: SIZES.body1,
-                  color: COLORS.black,
-                }}
-              >
-                Stock Opname Tesis
-              </Text>
-              <MaterialIcons
-                name="keyboard-arrow-right"
-                size={25}
-                color={COLORS.grey}
-                style={{ marginLeft: 5 }}
-              />
-            </View>
-          </View>
-        </View>
-
-        {/* Catatan Tim */}
-        <View style={{ marginBottom: 14 }}>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              marginBottom: 14,
-            }}
-          >
-            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Catatan Tim
-            </Text>
-            <View style={{ flexDirection: "row" }}>
-              <Text
-                style={{
-                  maxWidth: 150,
-                  fontSize: SIZES.body1,
-                  color: COLORS.black,
-                }}
-              >
-                scanning rak mulai dari D01
-              </Text>
-              <MaterialIcons
-                name="keyboard-arrow-right"
-                size={25}
-                color={COLORS.grey}
-                style={{ marginLeft: 5 }}
-              />
-            </View>
-          </View>
-        </View>
-
-        {/* Bidang Ilmu */}
-        <View style={{ marginBottom: 14 }}>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              marginBottom: 14,
-            }}
-          >
-            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Bidang Ilmu
-            </Text>
-            <View style={{ flexDirection: "row" }}>
-              <Text
-                style={{
-                  maxWidth: 150,
-                  fontSize: SIZES.body1,
-                  color: COLORS.black,
-                }}
-              >
-                Sains
-              </Text>
-              <MaterialIcons
-                name="keyboard-arrow-right"
-                size={25}
-                color={COLORS.grey}
-                style={{ marginLeft: 5 }}
-              />
-            </View>
-          </View>
-        </View>
-
-        {/* Anggota */}
-        <View style={{ marginBottom: 14 }}>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              marginBottom: 14,
-            }}
-          >
-            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Anggota
-            </Text>
-            <View style={{ flexDirection: "row" }}>
-              <Text
-                style={{
-                  maxWidth: 150,
-                  fontSize: SIZES.body1,
-                  color: COLORS.black,
-                }}
-              >
-                14 orang
-              </Text>
-              <MaterialIcons
-                name="keyboard-arrow-right"
-                size={25}
-                color={COLORS.grey}
-                style={{ marginLeft: 5 }}
-              />
-            </View>
-          </View>
-        </View>
-        <TouchableOpacity style={{ marginTop: 3, flexDirection: "row" }}>
-          <FontAwesome
-            name="send"
-            size={17}
-            color={COLORS.primary}
-            style={{ marginRight: 7 }}
-          />
-          <Text
-            style={{
-              fontSize: SIZES.sub,
-              color: COLORS.primary,
-              fontWeight: "bold",
-            }}
-          >
-            Undang anggota
-          </Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-
-  function gantiTim() {
-    const gotoTim = () => {
-      navigation.navigate("Tim");
-    };
-    return (
-      <View
-        style={{
-          paddingHorizontal: SIZES.padding2 * 2,
-          position: "relative",
-          bottom: 40,
-        }}
-      >
-        <Text
-          style={{
-            fontSize: SIZES.h3,
-            fontWeight: "bold",
-            color: COLORS.black,
-            marginBottom: 12,
-          }}
-        >
-          Ganti Tim
-        </Text>
-
-        {/* Tim Saya */}
-        <View style={{ marginBottom: 14 }}>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              marginBottom: 14,
-            }}
-          >
-            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Tim Saya
-            </Text>
-            <View style={{ flexDirection: "row" }}>
-              <MaterialIcons
-                name="keyboard-arrow-right"
-                size={25}
-                color={COLORS.grey}
-                style={{ marginLeft: 5 }}
-              />
-            </View>
-          </View>
-        </View>
-
-        <TouchableOpacity style={{ flexDirection: "row" }} onPress={gotoTim}>
-          <Ionicons
-            name="add-circle-sharp"
-            size={20}
-            color={COLORS.primary}
-            style={{ marginRight: 7 }}
-          />
-          <Text
-            style={{
-              fontSize: SIZES.sub,
-              color: COLORS.primary,
-              fontWeight: "bold",
-            }}
-          >
-            Tambah Tim Baru
-          </Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-
-  function pendukung() {
-    return (
-      <View
-        style={{
-          paddingHorizontal: SIZES.padding2 * 2,
-          position: "relative",
-          bottom: 5,
+          marginTop: 21,
         }}
       >
         <Text
@@ -388,30 +217,7 @@ const Pengaturan = ({ navigation }) => {
         >
           Pendukung
         </Text>
-
-        {/* Pengumuman */}
         <View style={{ marginBottom: 14 }}>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              marginBottom: 28,
-            }}
-          >
-            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Pengumuman
-            </Text>
-            <View style={{ flexDirection: "row" }}>
-              <MaterialIcons
-                name="keyboard-arrow-right"
-                size={25}
-                color={COLORS.grey}
-                style={{ marginLeft: 5 }}
-              />
-            </View>
-          </View>
-
-          {/* Hapus Data */}
           <View
             style={{
               flexDirection: "row",
@@ -420,7 +226,91 @@ const Pengaturan = ({ navigation }) => {
             }}
           >
             <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Hapus Data
+              Bahasa
+            </Text>
+            <View style={{ flexDirection: "row" }}>
+              <Text
+                style={{
+                  maxWidth: 150,
+                  fontSize: SIZES.body1,
+                  color: COLORS.black,
+                }}
+              >
+                Indonesia
+              </Text>
+              <MaterialIcons
+                name="keyboard-arrow-right"
+                size={25}
+                color={COLORS.grey}
+                style={{ marginLeft: 5 }}
+              />
+            </View>
+          </View>
+        </View>
+
+        {/* Switch button */}
+        <View style={{ marginBottom: 14 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              //   marginBottom: 14,
+              position: "relative",
+              bottom: 15,
+            }}
+          >
+            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+              Suara Pindai
+            </Text>
+            <View style={{ flexDirection: "row" }}>
+              <Switch
+                trackColor={{ false: "gray", true: "green" }}
+                thumbColor="white"
+                ios_backgroundColor="gray"
+                onValueChange={(value) => setToggle(value)}
+                value={toggle}
+              />
+            </View>
+          </View>
+        </View>
+
+        {/* Switch button */}
+        <View style={{ marginBottom: 14 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              //   marginBottom: 14,
+              position: "relative",
+              bottom: 15,
+            }}
+          >
+            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+              Getar Pindai
+            </Text>
+            <View style={{ flexDirection: "row" }}>
+              <Switch
+                trackColor={{ false: "gray", true: "green" }}
+                thumbColor="white"
+                ios_backgroundColor="gray"
+                onValueChange={(value) => setToggleTwo(value)}
+                value={toggleTwo}
+              />
+            </View>
+          </View>
+        </View>
+        <View style={{ marginBottom: 14 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginBottom: 14,
+            }}
+          >
+            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+              Keluar
             </Text>
             <View style={{ flexDirection: "row" }}>
               <MaterialIcons
@@ -437,38 +327,19 @@ const Pengaturan = ({ navigation }) => {
   }
 
   return (
-    <ScrollView style={{ marginBottom: 70 }}>
+    <View>
       {headerComponent()}
-      {banner()}
+      {sectionOnePengaturanAkun()}
       <View
         style={{
           borderBottomWidth: 5,
           borderBottomColor: "#ececec",
           position: "relative",
-          bottom: 100,
         }}
       ></View>
-      {kelolaTim()}
-      <View
-        style={{
-          borderBottomWidth: 5,
-          borderBottomColor: "#ececec",
-          position: "relative",
-          bottom: 60,
-        }}
-      ></View>
-      {gantiTim()}
-      <View
-        style={{
-          borderBottomWidth: 5,
-          borderBottomColor: "#ececec",
-          position: "relative",
-          bottom: 25,
-        }}
-      ></View>
-      {pendukung()}
-    </ScrollView>
+      {sectionTwoPengaturanAkun()}
+    </View>
   );
 };
 
-export default Pengaturan;
+export default PengaturanAkun;

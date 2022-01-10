@@ -11,6 +11,9 @@ import {
   Detail,
   Resinkronisasi,
   UndangAnggota,
+  PilihTim,
+  TambahBuku,
+  PengaturanAkun,
 } from "./screens";
 import Tabs from "./navigation/tabs";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -36,6 +39,9 @@ export default function App() {
         <Stack.Screen name="Detail" component={Detail} />
         <Stack.Screen name="Resinkronisasi" component={Resinkronisasi} />
         <Stack.Screen name="UndangAnggota" component={UndangAnggota} />
+        <Stack.Screen name="PilihTim" component={PilihTim} />
+        <Stack.Screen name="TambahBuku" component={TambahBuku} />
+        <Stack.Screen name="PengaturanAkun" component={PengaturanAkun} />
       </Stack.Navigator>
     </NavigationContainer>
 

@@ -315,6 +315,11 @@ const Beranda = ({ navigation }) => {
     const gotoResinkronisasi = () => {
       navigation.navigate("Resinkronisasi");
     };
+
+    const gotoTambahBuku = () => {
+      navigation.navigate("TambahBuku");
+    };
+
     return (
       <View
         style={{
@@ -339,6 +344,7 @@ const Beranda = ({ navigation }) => {
 
         {/* tambah koleksi */}
         <TouchableOpacity
+          onPress={gotoTambahBuku}
           style={{ flexDirection: "row", justifyContent: "space-between" }}
         >
           <View>
@@ -350,7 +356,7 @@ const Beranda = ({ navigation }) => {
             <Text
               style={{ fontSize: SIZES.body1, marginTop: 11, marginLeft: 36 }}
             >
-              Daftar koleksi
+              Daftarkan koleksi
             </Text>
           </View>
           <MaterialIcons

@@ -12,6 +12,9 @@ import Pengaturan from "./Pengaturan";
 import Detail from "./Detail";
 import Resinkronisasi from "./Resinkronisasi";
 import UndangAnggota from "./UndangAnggota";
+import PilihTim from "./PilihTim";
+import TambahBuku from "./TambahBuku";
+import PengaturanAkun from "./PengaturanAkun";
 
 export {
   SignIn,
@@ -28,4 +31,7 @@ export {
   Detail,
   Resinkronisasi,
   UndangAnggota,
+  PilihTim,
+  TambahBuku,
+  PengaturanAkun,
 };
