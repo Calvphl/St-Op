@@ -15,6 +15,7 @@ import UndangAnggota from "./UndangAnggota";
 import PilihTim from "./PilihTim";
 import TambahBuku from "./TambahBuku";
 import PengaturanAkun from "./PengaturanAkun";
+import Riwayat from "./Riwayat";
 
 export {
   SignIn,
@@ -34,4 +35,5 @@ export {
   PilihTim,
   TambahBuku,
   PengaturanAkun,
+  Riwayat,
 };

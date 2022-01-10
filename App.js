@@ -14,6 +14,7 @@ import {
   PilihTim,
   TambahBuku,
   PengaturanAkun,
+  Riwayat,
 } from "./screens";
 import Tabs from "./navigation/tabs";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -42,6 +43,7 @@ export default function App() {
         <Stack.Screen name="PilihTim" component={PilihTim} />
         <Stack.Screen name="TambahBuku" component={TambahBuku} />
         <Stack.Screen name="PengaturanAkun" component={PengaturanAkun} />
+        <Stack.Screen name="Riwayat" component={Riwayat} />
       </Stack.Navigator>
     </NavigationContainer>
 

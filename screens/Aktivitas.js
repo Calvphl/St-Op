@@ -58,13 +58,13 @@ const Aktivitas = ({ navigation }) => {
   }
 
   function renderNote() {
-    // const gotoDetail = () => {
-    //   navigation.navigate("Detail");
-    // };
+    const gotoRiwayat = () => {
+      navigation.navigate("Riwayat");
+    };
 
     return (
       <TouchableOpacity
-        // onPress={gotoDetail}
+        onPress={gotoRiwayat}
         style={{
           marginTop: 30,
           marginBottom: 20,
