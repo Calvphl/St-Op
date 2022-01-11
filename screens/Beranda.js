@@ -264,6 +264,9 @@ const Beranda = ({ navigation }) => {
   }
 
   function hitungBuku() {
+    const gotoScan = () => {
+      navigation.navigate("Scan");
+    };
     return (
       <View
         style={{
@@ -286,6 +289,7 @@ const Beranda = ({ navigation }) => {
           Hitung Koleksi Buku
         </Text>
         <TouchableOpacity
+          onPress={gotoScan}
           style={{ flexDirection: "row", justifyContent: "space-between" }}
         >
           <View>
