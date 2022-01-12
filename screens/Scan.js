@@ -1,12 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, StyleSheet, Alert, TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Alert,
+  TouchableOpacity,
+  Modal,
+  TextInput,
+  ScrollView,
+  KeyboardAvoidingView,
+  Keyboard,
+  TouchableWithoutFeedback,
+} from "react-native";
 import { BarCodeScanner } from "expo-barcode-scanner";
 import { SIZES, COLORS, icons, images } from "../constants";
 import { MaterialCommunityIcons, Ionicons, Feather } from "@expo/vector-icons";
+// import SweetAlert from "react-native-sweet-alert";
+// import swal from "sweetalert";
 
 export default function Scan({ navigation }) {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -18,13 +33,145 @@ export default function Scan({ navigation }) {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     Alert.alert(`${data}\nScanning Barcode Berhasil ✅`);
+    // SweetAlert.showAlertWithOptions(
+    //   {
+    //     title: "",
+    //     subTitle: "",
+    //     // confirmButtonTitle: "OK",
+    //     // confirmButtonColor: "#000",
+    //     otherButtonTitle: "Cancel",
+    //     otherButtonColor: "#dedede",
+    //     style: "success",
+    //     cancellable: true,
+    //   },
+    //   (callback) => console.log("callback")
+    // );
   };
 
   if (hasPermission === null) {
-    return <Text>Requesting for camera permission</Text>;
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text>Requesting for camera permission</Text>
+      </View>
+    );
   }
   if (hasPermission === false) {
-    return <Text>No access to camera</Text>;
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text>No access to camera</Text>
+      </View>
+    );
+  }
+
+  function renderModal() {
+    return (
+      <View>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => setModalVisible(!modalVisible)}
+        >
+          <View
+            style={{
+              flex: 1,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <View
+              style={{
+                height: 237,
+                width: 303,
+                backgroundColor: COLORS.white,
+                borderRadius: SIZES.radius,
+                paddingTop: 14,
+                alignItems: "center",
+                shadowColor: "#838383",
+                shadowOffset: {
+                  width: 0,
+                  height: 2,
+                },
+                shadowOpacity: 0.25,
+                shadowRadius: 4,
+                elevation: 5,
+              }}
+            >
+              <Text
+                style={{
+                  color: COLORS.black,
+                  fontSize: 22,
+                  fontFamily: "Roboto",
+                  fontWeight: "bold",
+                }}
+              >
+                Gabung Tim
+              </Text>
+              <View style={{ maxWidth: 225, marginTop: 11 }}>
+                <Text style={{ fontSize: SIZES.body1, textAlign: "center" }}>
+                  Masukkan kode undangan yang Anda terima dari rekan Anda.
+                </Text>
+              </View>
+              <TextInput
+                style={{
+                  borderColor: COLORS.grey,
+                  borderWidth: 1,
+                  height: 58,
+                  width: 246,
+                  borderRadius: 6,
+                  marginTop: 11,
+                  fontSize: SIZES.h3,
+                  paddingLeft: 12,
+                  paddingRight: 12,
+                }}
+                maxLength={5}
+                placeholder="Kode"
+                keyboardType="numeric"
+              />
+              <View
+                style={{
+                  marginTop: 12.5,
+                  width: 241,
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <TouchableOpacity
+                  style={{
+                    height: 50,
+                    width: 116,
+                    backgroundColor: COLORS.secondary,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderRadius: SIZES.radius,
+                  }}
+                  onPress={() => setModalVisible(!modalVisible)}
+                >
+                  <Text style={{ color: COLORS.primary, fontSize: SIZES.h3 }}>
+                    Batal
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{
+                    height: 50,
+                    width: 116,
+                    backgroundColor: COLORS.primary,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderRadius: SIZES.radius,
+                  }}
+                  onPress={() => navigation.navigate("Beranda")}
+                >
+                  <Text style={{ color: COLORS.white, fontSize: SIZES.h3 }}>
+                    Lanjut
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </Modal>
+      </View>
+    );
   }
 
   return (
@@ -33,6 +180,7 @@ export default function Scan({ navigation }) {
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
         style={StyleSheet.absoluteFillObject}
       />
+      {renderModal()}
       <View
         style={{
           position: "absolute",
@@ -127,7 +275,8 @@ export default function Scan({ navigation }) {
             </Text>
           </TouchableOpacity>
         )}
-        <View
+        <TouchableOpacity
+          onPress={() => navigation.navigate("TambahBuku")}
           style={{ marginTop: 75, flexDirection: "row", alignItems: "center" }}
         >
           <Feather name="edit" size={24} color={COLORS.black} />
@@ -140,7 +289,7 @@ export default function Scan({ navigation }) {
           >
             Tulis Manual
           </Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );

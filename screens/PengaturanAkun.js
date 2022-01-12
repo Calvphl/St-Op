@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, Image, Switch } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  Switch,
+  TextInput,
+} from "react-native";
 import { SIZES, COLORS, icons, images } from "../constants";
 import {
   MaterialCommunityIcons,
@@ -81,15 +88,16 @@ const PengaturanAkun = ({ navigation }) => {
               Nama Pengguna
             </Text>
             <View style={{ flexDirection: "row" }}>
-              <Text
+              <TextInput
+                placeholder="Calvin Putera Loka"
+                placeholderTextColor={COLORS.black}
                 style={{
-                  maxWidth: 150,
+                  maxWidth: 180,
                   fontSize: SIZES.body1,
                   color: COLORS.black,
                 }}
-              >
-                Akun 1
-              </Text>
+              />
+
               <MaterialIcons
                 name="keyboard-arrow-right"
                 size={25}
@@ -113,15 +121,15 @@ const PengaturanAkun = ({ navigation }) => {
               Alamat Surel
             </Text>
             <View style={{ flexDirection: "row" }}>
-              <Text
+              <TextInput
+                placeholder="calvin.loka8@gmail.com"
+                placeholderTextColor={COLORS.black}
                 style={{
-                  maxWidth: 150,
+                  maxWidth: 220,
                   fontSize: SIZES.body1,
-                  color: COLORS.black,
+                  // color: COLORS.black,
                 }}
-              >
-                akun1@blabla.com
-              </Text>
+              />
               <MaterialIcons
                 name="keyboard-arrow-right"
                 size={25}
@@ -152,7 +160,7 @@ const PengaturanAkun = ({ navigation }) => {
                   color: COLORS.black,
                 }}
               >
-                Pustakawan
+                Pustakawan Senior
               </Text>
               <MaterialIcons
                 name="keyboard-arrow-right"
@@ -302,7 +310,8 @@ const PengaturanAkun = ({ navigation }) => {
           </View>
         </View>
         <View style={{ marginBottom: 14 }}>
-          <View
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Open")}
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
@@ -320,7 +329,7 @@ const PengaturanAkun = ({ navigation }) => {
                 style={{ marginLeft: 5 }}
               />
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -330,6 +339,31 @@ const PengaturanAkun = ({ navigation }) => {
     <View>
       {headerComponent()}
       {sectionOnePengaturanAkun()}
+      <TouchableOpacity
+        style={{
+          position: "relative",
+          left: 45,
+          alignItems: "center",
+          backgroundColor: COLORS.white,
+          paddingVertical: 15,
+          justifyContent: "center",
+          width: 300,
+          marginBottom: 20,
+          borderRadius: SIZES.radius,
+        }}
+      >
+        <Text
+          style={{
+            fontSize: SIZES.h3,
+            fontWeight: "bold",
+            color: COLORS.primary,
+            // marginBottom: 20,
+            // marginTop: 20,
+          }}
+        >
+          Simpan
+        </Text>
+      </TouchableOpacity>
       <View
         style={{
           borderBottomWidth: 5,
@@ -337,6 +371,7 @@ const PengaturanAkun = ({ navigation }) => {
           position: "relative",
         }}
       ></View>
+
       {sectionTwoPengaturanAkun()}
     </View>
   );

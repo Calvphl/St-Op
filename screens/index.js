@@ -17,6 +17,7 @@ import TambahBuku from "./TambahBuku";
 import PengaturanAkun from "./PengaturanAkun";
 import Riwayat from "./Riwayat";
 import Scan from "./Scan";
+import DaftarAnggota from "./DaftarAnggota";
 
 export {
   SignIn,
@@ -38,4 +39,5 @@ export {
   PengaturanAkun,
   Riwayat,
   Scan,
+  DaftarAnggota,
 };

@@ -40,7 +40,7 @@ const UndangAnggota = ({ navigation }) => {
 
   function mainUndangAnggota() {
     return (
-      <View style={{ paddingHorizontal: SIZES.padding2 * 2, marginTop: 23 }}>
+      <View style={{ paddingHorizontal: SIZES.padding2 * 2, marginTop: 97 }}>
         <Text
           style={{
             fontSize: SIZES.h2,
@@ -128,7 +128,7 @@ const UndangAnggota = ({ navigation }) => {
 
   return (
     <View>
-      {headerComponent()}
+      {/* {headerComponent()} */}
       {mainUndangAnggota()}
       {cardUndangAnggota()}
     </View>

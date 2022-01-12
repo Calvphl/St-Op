@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+  TextInput,
+} from "react-native";
 import { SIZES, COLORS, icons, images } from "../constants";
 import {
   MaterialCommunityIcons,
@@ -75,17 +82,20 @@ const Pengaturan = ({ navigation }) => {
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "flex-end",
+              position: "relative",
+              bottom: 30,
             }}
           >
             <View style={{ marginRight: 6 }}>
               <Text
                 style={{
                   textAlign: "right",
-                  fontSize: 12,
+                  fontSize: 16,
                   color: COLORS.white,
+                  fontWeight: "bold",
                 }}
               >
-                Nama pengguna
+                Calvin Putera Loka
               </Text>
               <Text
                 style={{
@@ -95,12 +105,16 @@ const Pengaturan = ({ navigation }) => {
                   color: COLORS.white,
                 }}
               >
-                Pustakawan
+                Pustakawan Senior
               </Text>
             </View>
-            <Image source={images.akun} resizeMode="contain" />
+            <Image
+              source={images.avatar}
+              resizeMode="contain"
+              style={{ width: 50 }}
+            />
           </TouchableOpacity>
-          <View style={{ marginTop: 32 }}>
+          <View style={{ position: "relative", bottom: 20 }}>
             <Text
               style={{
                 fontSize: SIZES.h3,
@@ -111,11 +125,11 @@ const Pengaturan = ({ navigation }) => {
               Stock Opname Tesis
             </Text>
             <Text style={{ fontSize: SIZES.body2, color: COLORS.white }}>
-              D01 - F04 | Anggota 14
+              D01 - F04 | Anggota 5
             </Text>
           </View>
         </View>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={{ position: "relative", bottom: 115 }}
           onPress={gotoPilihTim}
         >
@@ -129,12 +143,15 @@ const Pengaturan = ({ navigation }) => {
           >
             Ganti Tim
           </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
     );
   }
 
   function kelolaTim() {
+    const gotoDaftarAnggota = () => {
+      navigation.navigate("DaftarAnggota");
+    };
     return (
       <View
         style={{
@@ -167,15 +184,15 @@ const Pengaturan = ({ navigation }) => {
               Nama Tim
             </Text>
             <View style={{ flexDirection: "row" }}>
-              <Text
+              <TextInput
+                placeholder="Stock Opname Tesis"
+                placeholderTextColor={COLORS.black}
                 style={{
                   maxWidth: 150,
                   fontSize: SIZES.body1,
-                  color: COLORS.black,
                 }}
-              >
-                Stock Opname Tesis
-              </Text>
+              />
+
               <MaterialIcons
                 name="keyboard-arrow-right"
                 size={25}
@@ -199,15 +216,16 @@ const Pengaturan = ({ navigation }) => {
               Catatan Tim
             </Text>
             <View style={{ flexDirection: "row" }}>
-              <Text
+              <TextInput
+                placeholder="scan tesis"
+                placeholderTextColor={COLORS.black}
+                numberOfLines={3}
                 style={{
                   maxWidth: 150,
+                  maxHeight: 30,
                   fontSize: SIZES.body1,
-                  color: COLORS.black,
                 }}
-              >
-                scanning rak mulai dari D01
-              </Text>
+              />
               <MaterialIcons
                 name="keyboard-arrow-right"
                 size={25}
@@ -219,7 +237,7 @@ const Pengaturan = ({ navigation }) => {
         </View>
 
         {/* Bidang Ilmu */}
-        <View style={{ marginBottom: 14 }}>
+        {/* <View style={{ marginBottom: 14 }}>
           <View
             style={{
               flexDirection: "row",
@@ -248,11 +266,12 @@ const Pengaturan = ({ navigation }) => {
               />
             </View>
           </View>
-        </View>
+        </View> */}
 
         {/* Anggota */}
         <View style={{ marginBottom: 14 }}>
-          <View
+          <TouchableOpacity
+            onPress={gotoDaftarAnggota}
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
@@ -270,7 +289,7 @@ const Pengaturan = ({ navigation }) => {
                   color: COLORS.black,
                 }}
               >
-                14 orang
+                5 orang
               </Text>
               <MaterialIcons
                 name="keyboard-arrow-right"
@@ -279,9 +298,12 @@ const Pengaturan = ({ navigation }) => {
                 style={{ marginLeft: 5 }}
               />
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity style={{ marginTop: 3, flexDirection: "row" }}>
+        <TouchableOpacity
+          style={{ marginTop: 3, flexDirection: "row" }}
+          onPress={() => navigation.navigate("UndangAnggota")}
+        >
           <FontAwesome
             name="send"
             size={17}
@@ -327,7 +349,8 @@ const Pengaturan = ({ navigation }) => {
 
         {/* Tim Saya */}
         <View style={{ marginBottom: 14 }}>
-          <View
+          <TouchableOpacity
+            onPress={() => navigation.navigate("PilihTim")}
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
@@ -345,7 +368,7 @@ const Pengaturan = ({ navigation }) => {
                 style={{ marginLeft: 5 }}
               />
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
 
         <TouchableOpacity style={{ flexDirection: "row" }} onPress={gotoTim}>
@@ -466,7 +489,32 @@ const Pengaturan = ({ navigation }) => {
           bottom: 25,
         }}
       ></View>
-      {pendukung()}
+      <TouchableOpacity
+        style={{
+          position: "relative",
+          left: 45,
+          alignItems: "center",
+          backgroundColor: COLORS.white,
+          paddingVertical: 15,
+          justifyContent: "center",
+          width: 300,
+          marginBottom: 20,
+          borderRadius: SIZES.radius,
+        }}
+      >
+        <Text
+          style={{
+            fontSize: SIZES.h3,
+            fontWeight: "bold",
+            color: COLORS.primary,
+            // marginBottom: 20,
+            // marginTop: 20,
+          }}
+        >
+          Simpan
+        </Text>
+      </TouchableOpacity>
+      {/* {pendukung()} */}
     </ScrollView>
   );
 };

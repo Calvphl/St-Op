@@ -88,7 +88,7 @@ const SignIn = ({ navigation }) => {
           alignItems: "center",
           justifyContent: "center",
         }}
-        onPress={() => navigation.navigate("TimIn")}
+        onPress={() => navigation.navigate("Beranda")}
       >
         <Text
           style={{
@@ -107,13 +107,13 @@ const SignIn = ({ navigation }) => {
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View
         style={{
-          marginTop: 47,
+          marginTop: 87,
           marginHorizontal: SIZES.padding2 * 2,
         }}
       >
-        <TouchableOpacity onPress={() => navigation.navigate("Open")}>
+        {/* <TouchableOpacity onPress={() => navigation.navigate("Open")}>
           <Ionicons name="close" size={36} color={COLORS.black} />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <View style={{ marginTop: 37 }}>
           <Text
             style={{

@@ -119,10 +119,10 @@ const CreateTeam = ({ navigation }) => {
         behavior={Platform.OS === "android" ? null : "position"}
         style={{ flex: 1 }}
       >
-        <View style={{ marginTop: 47 }}>{headerComponent()}</View>
+        {/* <View style={{ marginTop: 47 }}>{headerComponent()}</View> */}
         <View
           style={{
-            marginTop: 23,
+            marginTop: 120,
             marginHorizontal: SIZES.padding2 * 2,
             flexDirection: "row",
             justifyContent: "space-between",

@@ -227,10 +227,10 @@ const SignUp = ({ navigation }) => {
         style={{ flex: 1 }}
       >
         <ScrollView>
-          <View style={{ marginTop: 47, marginHorizontal: SIZES.padding2 * 2 }}>
-            <TouchableOpacity onPress={() => navigation.navigate("Open")}>
+          <View style={{ marginTop: 87, marginHorizontal: SIZES.padding2 * 2 }}>
+            {/* <TouchableOpacity onPress={() => navigation.navigate("Open")}>
               <Ionicons name="close" size={36} color={COLORS.black} />
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             <View style={{ marginTop: 37 }}>
               <Text
                 style={{

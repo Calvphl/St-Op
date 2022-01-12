@@ -33,18 +33,18 @@ const Tim = ({ navigation }) => {
             alignItems: "center",
           }}
         >
-          <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+          {/* <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
             <Ionicons name="close" size={36} color={COLORS.black} />
-          </TouchableOpacity>
-          <Text
+          </TouchableOpacity> */}
+          {/* <Text
             style={{
               fontSize: SIZES.body1,
               color: COLORS.black,
-              marginLeft: 7,
+              // marginLeft: 7,
             }}
           >
             Buat Tim Baru
-          </Text>
+          </Text> */}
         </View>
       </View>
     );
@@ -168,8 +168,8 @@ const Tim = ({ navigation }) => {
           behavior={Platform.OS === "android" ? null : "position"}
           style={{ flex: 1 }}
         >
-          <View style={{ marginTop: 47 }}>{headerComponent()}</View>
-          <View style={{ marginHorizontal: SIZES.padding2 * 2 }}>
+          {/* <View style={{ marginTop: 47 }}>{headerComponent()}</View> */}
+          <View style={{ marginHorizontal: SIZES.padding2 * 2, marginTop: 87 }}>
             <Text
               style={{
                 fontSize: SIZES.h2,

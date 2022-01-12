@@ -73,15 +73,16 @@ const TambahBuku = ({ navigation }) => {
             <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
               Kode Bar
             </Text>
-            <Text
+            <TextInput
+              placeholder="Tulis Kode bar"
+              keyboardType="numeric"
               style={{
                 maxWidth: 150,
                 fontSize: SIZES.body1,
                 color: "#979797",
               }}
-            >
-              Pilih Cara
-            </Text>
+            />
+
             <MaterialIcons
               name="keyboard-arrow-right"
               size={25}

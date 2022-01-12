@@ -34,7 +34,7 @@ const PilihTim = ({ navigation }) => {
             <TouchableOpacity onPress={backToPengaturan}>
               <Ionicons name="close" size={36} color={COLORS.black} />
             </TouchableOpacity>
-            <Text
+            {/* <Text
               style={{
                 fontSize: SIZES.body1,
                 color: COLORS.black,
@@ -42,9 +42,10 @@ const PilihTim = ({ navigation }) => {
               }}
             >
               Pilih Tim
-            </Text>
+            </Text> */}
           </View>
           <TouchableOpacity
+            onPress={() => navigation.navigate("Tim")}
             style={{ flexDirection: "row", alignItems: "center" }}
           >
             <Ionicons
@@ -67,7 +68,7 @@ const PilihTim = ({ navigation }) => {
       <View style={{ marginTop: 21, paddingHorizontal: SIZES.padding2 * 2 }}>
         <Text
           style={{
-            fontSize: SIZES.body1,
+            fontSize: SIZES.h3,
             fontWeight: "bold",
             color: COLORS.black,
           }}
@@ -160,7 +161,7 @@ const PilihTim = ({ navigation }) => {
     <View>
       {headerComponent()}
       {mainPilihTim()}
-      {button()}
+      {/* {button()} */}
     </View>
   );
 };
