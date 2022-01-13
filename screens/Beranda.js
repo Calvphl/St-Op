@@ -7,7 +7,9 @@ import {
   TextInput,
   Image,
 } from "react-native";
-import { SIZES, COLORS, icons } from "../constants";
+// import { Tooltip } from "react-native-elements";
+import { Tooltip } from "react-native-elements";
+import { SIZES, COLORS, icons, images } from "../constants";
 import {
   MaterialCommunityIcons,
   Ionicons,
@@ -31,24 +33,82 @@ const Beranda = ({ navigation }) => {
             marginTop: 38,
           }}
         >
-          <TouchableOpacity>
-            <MaterialCommunityIcons
-              name="bell-outline"
-              size={31}
-              color={COLORS.black}
-            />
-            <View
-              style={{
-                position: "absolute",
-                top: 5,
-                left: 17,
-                height: 10,
-                width: 10,
-                backgroundColor: COLORS.red,
-                borderRadius: 25,
-              }}
-            ></View>
-          </TouchableOpacity>
+          <View>
+            <Tooltip
+              popover={
+                <View
+                  style={{
+                    paddingHorizontal: 15,
+                    // borderWidth: 1,
+                    // borderColor: COLORS.primary,
+                    // shadowColor: "#c7c7c7",
+                    // shadowOffset: { width: 0, height: 1 },
+                    // shadowOpacity: 0.8,
+                    // shadowRadius: SIZES.radius,
+                    // borderRadius: SIZES.radius,
+                    // elevation: 5,
+                  }}
+                >
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <Image
+                      source={images.avatar}
+                      resizeMode="contain"
+                      style={{ width: 35 }}
+                    />
+                    <View style={{ maxWidth: 180, marginLeft: 10 }}>
+                      <Text style={{ fontSize: 15, fontWeight: "bold" }}>
+                        Ria Rinjani
+                      </Text>
+                      <Text>Selesai melakukan scanning pada lantai 2</Text>
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      borderBottomWidth: 1,
+                      borderBottomColor: COLORS.grey,
+                      // marginTop: 2,
+                    }}
+                  ></View>
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <Image
+                      source={images.avatar}
+                      resizeMode="contain"
+                      style={{ width: 35 }}
+                    />
+                    <View style={{ maxWidth: 180, marginLeft: 10 }}>
+                      <Text style={{ fontSize: 15, fontWeight: "bold" }}>
+                        Agus Mardi
+                      </Text>
+                      <Text>Selesai melakukan scanning pada rak A01 - A10</Text>
+                    </View>
+                  </View>
+                </View>
+              }
+              width={260}
+              height={200}
+              backgroundColor={COLORS.white}
+              withOverlay={false}
+            >
+              <View>
+                <MaterialCommunityIcons
+                  name="bell-outline"
+                  size={31}
+                  color={COLORS.black}
+                />
+                <View
+                  style={{
+                    position: "absolute",
+                    top: 5,
+                    left: 17,
+                    height: 10,
+                    width: 10,
+                    backgroundColor: COLORS.red,
+                    borderRadius: 25,
+                  }}
+                ></View>
+              </View>
+            </Tooltip>
+          </View>
         </View>
       </View>
     );

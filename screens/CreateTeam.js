@@ -119,7 +119,15 @@ const CreateTeam = ({ navigation }) => {
           onPress={showDatepicker}
           style={{ flexDirection: "row", alignItems: "center" }}
         >
-          <Text style={{ fontSize: SIZES.body1, marginRight: 7 }}>{text}</Text>
+          <Text
+            style={{
+              fontSize: SIZES.body1,
+              marginRight: 7,
+              color: COLORS.primary,
+            }}
+          >
+            {text}
+          </Text>
           <AntDesign name="calendar" size={26} color={COLORS.primary} />
         </TouchableOpacity>
         {/* </View> */}
@@ -156,7 +164,13 @@ const CreateTeam = ({ navigation }) => {
           onPress={showDatepickerSelesai}
           style={{ flexDirection: "row", alignItems: "center" }}
         >
-          <Text style={{ fontSize: SIZES.body1, marginRight: 7 }}>
+          <Text
+            style={{
+              fontSize: SIZES.body1,
+              marginRight: 7,
+              color: COLORS.primary,
+            }}
+          >
             {textSelesai}
           </Text>
           <AntDesign name="calendar" size={26} color={COLORS.primary} />
