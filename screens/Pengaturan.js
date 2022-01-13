@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -7,15 +7,22 @@ import {
   ScrollView,
   TextInput,
 } from "react-native";
-import { SIZES, COLORS, icons, images } from "../constants";
+import { SIZES, COLORS, icons, images, gif } from "../constants";
 import {
   MaterialCommunityIcons,
   Ionicons,
   MaterialIcons,
   FontAwesome,
 } from "@expo/vector-icons";
+import Modal from "react-native-modal";
 
 const Pengaturan = ({ navigation }) => {
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
   function headerComponent() {
     const gotoPengaturanAkun = () => {
       navigation.navigate("PengaturanAkun");
@@ -125,7 +132,7 @@ const Pengaturan = ({ navigation }) => {
               Stock Opname Tesis
             </Text>
             <Text style={{ fontSize: SIZES.body2, color: COLORS.white }}>
-              D01 - F04 | Anggota 5
+              scan tesis | Anggota 5
             </Text>
           </View>
         </View>
@@ -490,6 +497,7 @@ const Pengaturan = ({ navigation }) => {
         }}
       ></View>
       <TouchableOpacity
+        onPress={toggleModal}
         style={{
           position: "relative",
           left: 45,
@@ -515,6 +523,63 @@ const Pengaturan = ({ navigation }) => {
         </Text>
       </TouchableOpacity>
       {/* {pendukung()} */}
+      <Modal
+        isVisible={isModalVisible}
+        animationIn="fadeIn"
+        animationOut="fadeOut"
+        hasBackdrop={false}
+        backdropColor="black"
+        backdropOpacity={0.8}
+        style={{ justifyContent: "center", alignItems: "center" }}
+      >
+        <View
+          style={{
+            width: 300,
+            height: 200,
+            backgroundColor: "white",
+            justifyContent: "center",
+            // alignItems: "center",
+            borderRadius: 12,
+          }}
+        >
+          <View style={{ marginTop: 35, alignItems: "center" }}>
+            <Text
+              style={{
+                fontSize: SIZES.h3,
+                fontWeight: "bold",
+                // marginTop: 10,
+              }}
+            >
+              Perubahan Berhasil Disimpan
+            </Text>
+            <Image
+              source={gif.simpan}
+              resizeMode="contain"
+              style={{
+                width: 80,
+                position: "absolute",
+                bottom: -185,
+                left: 110,
+              }}
+            />
+          </View>
+
+          <TouchableOpacity
+            // onPress={() => navigation.navigate("Beranda")}
+            onPress={toggleModal}
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              position: "relative",
+              top: 30,
+            }}
+          >
+            <Text style={{ fontSize: SIZES.h3, color: COLORS.primary }}>
+              Oke
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </Modal>
     </ScrollView>
   );
 };

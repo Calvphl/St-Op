@@ -4,18 +4,24 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  Modal,
+  // Modal,
   TouchableWithoutFeedback,
   TextInput,
   Keyboard,
   KeyboardAvoidingView,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { SIZES, COLORS, icons } from "../constants";
+import { SIZES, COLORS, icons, gif } from "../constants";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import Modal from "react-native-modal";
 
 const Tim = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [modalKode, setModalKode] = useState(false);
+
+  const toggleModalKode = () => {
+    setModalKode(!modalKode);
+  };
 
   function headerComponent() {
     return (
@@ -147,10 +153,10 @@ const Tim = ({ navigation }) => {
                     alignItems: "center",
                     borderRadius: SIZES.radius,
                   }}
-                  onPress={() => navigation.navigate("Beranda")}
+                  onPress={toggleModalKode}
                 >
                   <Text style={{ color: COLORS.white, fontSize: SIZES.h3 }}>
-                    Lanjut
+                    Oke
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -312,6 +318,63 @@ const Tim = ({ navigation }) => {
             </View>
           </TouchableOpacity>
           {renderModal()}
+          <Modal
+            isVisible={modalKode}
+            animationIn="fadeIn"
+            animationOut="fadeOut"
+            hasBackdrop={false}
+            backdropColor="black"
+            backdropOpacity={0.8}
+            style={{ justifyContent: "center", alignItems: "center" }}
+          >
+            <View
+              style={{
+                height: 237,
+                width: 303,
+                backgroundColor: "white",
+                justifyContent: "center",
+                // alignItems: "center",
+                borderRadius: 12,
+              }}
+            >
+              <View style={{ marginTop: 35, alignItems: "center" }}>
+                <Text
+                  style={{
+                    fontSize: SIZES.h3,
+                    fontWeight: "bold",
+                    // marginTop: 10,
+                  }}
+                >
+                  Kode Berhasil Terverifikasi
+                </Text>
+                <Image
+                  source={gif.kode}
+                  resizeMode="contain"
+                  style={{
+                    width: 80,
+                    position: "absolute",
+                    bottom: -185,
+                    left: 110,
+                  }}
+                />
+              </View>
+
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Beranda")}
+                // onPress={toggleModalKode}
+                style={{
+                  justifyContent: "center",
+                  alignItems: "center",
+                  position: "relative",
+                  top: 30,
+                }}
+              >
+                <Text style={{ fontSize: SIZES.h3, color: COLORS.primary }}>
+                  Oke
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </Modal>
         </KeyboardAvoidingView>
       </TouchableWithoutFeedback>
     </SafeAreaProvider>

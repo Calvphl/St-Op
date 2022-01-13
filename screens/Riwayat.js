@@ -44,13 +44,13 @@ const Riwayat = ({ navigation }) => {
               Riwayat
             </Text>
           </View>
-          <TouchableOpacity>
+          {/* <TouchableOpacity>
             <Entypo
               name="dots-three-horizontal"
               size={36}
               color={COLORS.black}
             />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
     );

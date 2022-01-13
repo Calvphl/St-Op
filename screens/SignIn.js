@@ -7,13 +7,20 @@ import {
   TextInput,
   TouchableWithoutFeedback,
   Keyboard,
+  Button,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { COLORS, SIZES, icons } from "../constants";
+import { COLORS, SIZES, icons, gif } from "../constants";
 import { Feather } from "@expo/vector-icons";
+import Modal from "react-native-modal";
 
 const SignIn = ({ navigation }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
 
   function formSignIn() {
     return (
@@ -88,7 +95,7 @@ const SignIn = ({ navigation }) => {
           alignItems: "center",
           justifyContent: "center",
         }}
-        onPress={() => navigation.navigate("Beranda")}
+        onPress={toggleModal}
       >
         <Text
           style={{
@@ -98,7 +105,7 @@ const SignIn = ({ navigation }) => {
             fontSize: 20,
           }}
         >
-          Oke
+          Masuk
         </Text>
       </TouchableOpacity>
     );
@@ -132,6 +139,64 @@ const SignIn = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View style={{ marginTop: 350 }}>{okeBtn()}</View>
+
+        <Modal
+          isVisible={isModalVisible}
+          animationIn="fadeIn"
+          animationOut="fadeOut"
+          hasBackdrop={false}
+          backdropColor="black"
+          backdropOpacity={0.8}
+          style={{ justifyContent: "center", alignItems: "center" }}
+        >
+          <View
+            style={{
+              width: 300,
+              height: 200,
+              backgroundColor: "white",
+              justifyContent: "center",
+              // alignItems: "center",
+              borderRadius: 12,
+            }}
+          >
+            <View style={{ marginTop: 35, alignItems: "center" }}>
+              <Text
+                style={{
+                  fontSize: SIZES.h2,
+                  fontWeight: "bold",
+                  // marginTop: 10,
+                }}
+              >
+                Berhasil Masuk
+              </Text>
+              <Image
+                source={gif.login}
+                resizeMode="contain"
+                style={{
+                  width: 80,
+                  position: "absolute",
+                  bottom: -185,
+                  left: 110,
+                }}
+              />
+            </View>
+
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Beranda")}
+              // onPress={toggleModal}
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative",
+                top: 30,
+              }}
+            >
+              <Text style={{ fontSize: SIZES.h3, color: COLORS.primary }}>
+                Oke
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </Modal>
       </View>
     </TouchableWithoutFeedback>
   );

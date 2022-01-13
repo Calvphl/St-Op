@@ -7,17 +7,24 @@ import {
   Switch,
   TextInput,
 } from "react-native";
-import { SIZES, COLORS, icons, images } from "../constants";
+import { SIZES, COLORS, icons, images, gif } from "../constants";
 import {
   MaterialCommunityIcons,
   Ionicons,
   MaterialIcons,
   FontAwesome,
 } from "@expo/vector-icons";
+import Modal from "react-native-modal";
 
 const PengaturanAkun = ({ navigation }) => {
   const [toggle, setToggle] = useState(false);
   const [toggleTwo, setToggleTwo] = useState(true);
+
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
 
   function headerComponent() {
     const backToAktivitas = () => {
@@ -340,6 +347,7 @@ const PengaturanAkun = ({ navigation }) => {
       {headerComponent()}
       {sectionOnePengaturanAkun()}
       <TouchableOpacity
+        onPress={toggleModal}
         style={{
           position: "relative",
           left: 45,
@@ -373,6 +381,63 @@ const PengaturanAkun = ({ navigation }) => {
       ></View>
 
       {sectionTwoPengaturanAkun()}
+      <Modal
+        isVisible={isModalVisible}
+        animationIn="fadeIn"
+        animationOut="fadeOut"
+        hasBackdrop={false}
+        backdropColor="black"
+        backdropOpacity={0.8}
+        style={{ justifyContent: "center", alignItems: "center" }}
+      >
+        <View
+          style={{
+            width: 300,
+            height: 200,
+            backgroundColor: "white",
+            justifyContent: "center",
+            // alignItems: "center",
+            borderRadius: 12,
+          }}
+        >
+          <View style={{ marginTop: 35, alignItems: "center" }}>
+            <Text
+              style={{
+                fontSize: SIZES.h3,
+                fontWeight: "bold",
+                // marginTop: 10,
+              }}
+            >
+              Perubahan Berhasil Disimpan
+            </Text>
+            <Image
+              source={gif.simpan}
+              resizeMode="contain"
+              style={{
+                width: 80,
+                position: "absolute",
+                bottom: -185,
+                left: 110,
+              }}
+            />
+          </View>
+
+          <TouchableOpacity
+            // onPress={() => navigation.navigate("Beranda")}
+            onPress={toggleModal}
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              position: "relative",
+              top: 30,
+            }}
+          >
+            <Text style={{ fontSize: SIZES.h3, color: COLORS.primary }}>
+              Oke
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </Modal>
     </View>
   );
 };

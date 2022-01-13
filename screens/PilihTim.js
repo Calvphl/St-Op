@@ -97,7 +97,7 @@ const PilihTim = ({ navigation }) => {
                   marginRight: 28,
                 }}
               >
-                4
+                30
               </Text>
             </View>
             <View style={{ flexDirection: "row" }}>
@@ -113,7 +113,7 @@ const PilihTim = ({ navigation }) => {
                   marginLeft: 4,
                 }}
               >
-                14
+                5
               </Text>
             </View>
           </View>

@@ -9,15 +9,23 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
   Keyboard,
+  ScrollView,
 } from "react-native";
-import { COLORS, SIZES, images } from "../constants";
+import { COLORS, SIZES, images, gif } from "../constants";
 import { Ionicons, Feather } from "@expo/vector-icons";
 import { Dropdown } from "react-native-element-dropdown";
-import { ScrollView } from "react-native-gesture-handler";
+// import { ScrollView } from "react-native-gesture-handler";
+import Modal from "react-native-modal";
 
 const SignUp = ({ navigation }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [isFocus, setIsFocus] = useState(false);
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
   const data = [
     { label: "Pustakawan Senior", value: 1 },
     { label: "Pustakawan", value: 2 },
@@ -204,7 +212,7 @@ const SignUp = ({ navigation }) => {
           alignItems: "center",
           justifyContent: "center",
         }}
-        onPress={() => navigation.navigate("Tim")}
+        onPress={toggleModal}
       >
         <Text
           style={{
@@ -214,7 +222,7 @@ const SignUp = ({ navigation }) => {
             fontSize: 20,
           }}
         >
-          Oke
+          Daftar
         </Text>
       </TouchableOpacity>
     );
@@ -252,6 +260,63 @@ const SignUp = ({ navigation }) => {
             <View style={{ marginTop: SIZES.padding1 }}>{formSignUp()}</View>
             <View style={{ marginTop: 20 }}>{okeBtn()}</View>
           </View>
+          <Modal
+            isVisible={isModalVisible}
+            animationIn="fadeIn"
+            animationOut="fadeOut"
+            hasBackdrop={false}
+            backdropColor="black"
+            backdropOpacity={0.8}
+            style={{ justifyContent: "center", alignItems: "center" }}
+          >
+            <View
+              style={{
+                width: 300,
+                height: 200,
+                backgroundColor: "white",
+                justifyContent: "center",
+                // alignItems: "center",
+                borderRadius: 12,
+              }}
+            >
+              <View style={{ marginTop: 35, alignItems: "center" }}>
+                <Text
+                  style={{
+                    fontSize: SIZES.h2,
+                    fontWeight: "bold",
+                    // marginTop: 10,
+                  }}
+                >
+                  Berhasil Daftar
+                </Text>
+                <Image
+                  source={gif.daftar}
+                  resizeMode="contain"
+                  style={{
+                    width: 80,
+                    position: "absolute",
+                    bottom: -185,
+                    left: 110,
+                  }}
+                />
+              </View>
+
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Tim")}
+                // onPress={toggleModal}
+                style={{
+                  justifyContent: "center",
+                  alignItems: "center",
+                  position: "relative",
+                  top: 30,
+                }}
+              >
+                <Text style={{ fontSize: SIZES.h3, color: COLORS.primary }}>
+                  Oke
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </Modal>
         </ScrollView>
       </KeyboardAvoidingView>
     </TouchableWithoutFeedback>

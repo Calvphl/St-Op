@@ -1,9 +1,16 @@
-import React from "react";
-import { View, Text, Image, TouchableOpacity, Modal } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { SIZES, COLORS, icons } from "../constants";
+import { SIZES, COLORS, icons, gif } from "../constants";
+import Modal from "react-native-modal";
 
 const Resinkronisasi = ({ navigation }) => {
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
   function headerComponent() {
     return (
       <View
@@ -79,7 +86,7 @@ const Resinkronisasi = ({ navigation }) => {
             justifyContent: "center",
             marginBottom: 12,
           }}
-          //   onPress={() => navigation.navigate("Beranda")}
+          onPress={toggleModal}
         >
           <Text
             style={{
@@ -125,6 +132,63 @@ const Resinkronisasi = ({ navigation }) => {
       {headerComponent()}
       {mainResinkronisasi()}
       {button()}
+      <Modal
+        isVisible={isModalVisible}
+        animationIn="fadeIn"
+        animationOut="fadeOut"
+        hasBackdrop={false}
+        backdropColor="black"
+        backdropOpacity={0.8}
+        style={{ justifyContent: "center", alignItems: "center" }}
+      >
+        <View
+          style={{
+            width: 300,
+            height: 200,
+            backgroundColor: "white",
+            justifyContent: "center",
+            // alignItems: "center",
+            borderRadius: 12,
+          }}
+        >
+          <View style={{ marginTop: 35, alignItems: "center" }}>
+            <Text
+              style={{
+                fontSize: SIZES.h2,
+                fontWeight: "bold",
+                // marginTop: 10,
+              }}
+            >
+              Resinkronisasi Berhasil
+            </Text>
+            <Image
+              source={gif.resinkronisasi}
+              resizeMode="contain"
+              style={{
+                width: 80,
+                position: "absolute",
+                bottom: -185,
+                left: 110,
+              }}
+            />
+          </View>
+
+          <TouchableOpacity
+            // onPress={() => navigation.navigate("Beranda")}
+            onPress={toggleModal}
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              position: "relative",
+              top: 30,
+            }}
+          >
+            <Text style={{ fontSize: SIZES.h3, color: COLORS.primary }}>
+              Oke
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </Modal>
     </View>
   );
 };

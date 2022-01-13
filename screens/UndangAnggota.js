@@ -1,9 +1,16 @@
-import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import React, { useState } from "react";
+import { View, Text, TouchableOpacity, Image, TextInput } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { SIZES, COLORS, icons } from "../constants";
+import { SIZES, COLORS, icons, gif } from "../constants";
+import Modal from "react-native-modal";
 
 const UndangAnggota = ({ navigation }) => {
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
   function headerComponent() {
     return (
       <View
@@ -40,7 +47,7 @@ const UndangAnggota = ({ navigation }) => {
 
   function mainUndangAnggota() {
     return (
-      <View style={{ paddingHorizontal: SIZES.padding2 * 2, marginTop: 97 }}>
+      <View style={{ paddingHorizontal: SIZES.padding2 * 2, marginTop: 20 }}>
         <Text
           style={{
             fontSize: SIZES.h2,
@@ -67,11 +74,11 @@ const UndangAnggota = ({ navigation }) => {
 
   function cardUndangAnggota() {
     return (
-      <TouchableOpacity
+      <View
         // onPress={() => navigation.navigate("CreateTeam")}
         style={{
           width: 350,
-          height: 81,
+          height: 135,
           shadowColor: "#c7c7c7",
           backgroundColor: "#f7f7f7",
           shadowOffset: { width: 0, height: 1 },
@@ -84,7 +91,7 @@ const UndangAnggota = ({ navigation }) => {
           paddingLeft: SIZES.padding2 + 10,
         }}
       >
-        <TouchableOpacity
+        <View
           //   onPress={() => navigation.navigate("CreateTeam")}
           style={{
             marginLeft: 6,
@@ -109,7 +116,7 @@ const UndangAnggota = ({ navigation }) => {
           >
             Kirim Tautan Undangan
           </Text>
-        </TouchableOpacity>
+        </View>
         <View style={{ position: "absolute", top: 47, left: 63 }}>
           <Text
             style={{
@@ -119,18 +126,115 @@ const UndangAnggota = ({ navigation }) => {
               maxWidth: 234,
             }}
           >
-            Undang lewat whatsapp, email, atau SMS
+            Masukkan nomor telepon yang dituju
           </Text>
         </View>
-      </TouchableOpacity>
+        <View
+          style={{
+            position: "absolute",
+            top: 70,
+            left: 63,
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <TextInput
+            placeholder="08-XXX-XXX-XXXX"
+            style={{ fontSize: SIZES.body1, marginTop: 6 }}
+            keyboardType="numeric"
+            maxLength={13}
+          />
+          <TouchableOpacity
+            onPress={toggleModal}
+            style={{
+              marginTop: 10,
+              marginLeft: 20,
+              backgroundColor: COLORS.primary,
+              paddingVertical: 5,
+              width: 80,
+              alignItems: "center",
+              borderRadius: SIZES.radius,
+              borderColor: COLORS.primary,
+              borderWidth: 1,
+            }}
+          >
+            <Text
+              style={{
+                fontSize: SIZES.body1,
+                color: COLORS.white,
+              }}
+            >
+              Kirim
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     );
   }
 
   return (
     <View>
-      {/* {headerComponent()} */}
+      {headerComponent()}
       {mainUndangAnggota()}
       {cardUndangAnggota()}
+      <Modal
+        isVisible={isModalVisible}
+        animationIn="fadeIn"
+        animationOut="fadeOut"
+        hasBackdrop={false}
+        backdropColor="black"
+        backdropOpacity={0.8}
+        style={{ justifyContent: "center", alignItems: "center" }}
+      >
+        <View
+          style={{
+            width: 300,
+            height: 200,
+            backgroundColor: "white",
+            justifyContent: "center",
+            // alignItems: "center",
+            borderRadius: 12,
+          }}
+        >
+          <View style={{ marginTop: 35, alignItems: "center" }}>
+            <Text
+              style={{
+                fontSize: SIZES.h2,
+                fontWeight: "bold",
+                // marginTop: 10,
+              }}
+            >
+              Tautan Berhasil Dikirim
+            </Text>
+            <Image
+              source={gif.send}
+              resizeMode="contain"
+              style={{
+                width: 80,
+                position: "absolute",
+                bottom: -185,
+                left: 110,
+              }}
+            />
+          </View>
+
+          <TouchableOpacity
+            // onPress={() => navigation.navigate("Beranda")}
+            onPress={toggleModal}
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              position: "relative",
+              top: 30,
+            }}
+          >
+            <Text style={{ fontSize: SIZES.h3, color: COLORS.primary }}>
+              Oke
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </Modal>
     </View>
   );
 };

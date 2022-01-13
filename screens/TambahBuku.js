@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -10,9 +10,16 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
-import { SIZES, COLORS, images } from "../constants";
+import { SIZES, COLORS, images, gif } from "../constants";
+import Modal from "react-native-modal";
 
 const TambahBuku = ({ navigation }) => {
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
   function headerComponent() {
     return (
       <View
@@ -300,7 +307,7 @@ const TambahBuku = ({ navigation }) => {
             justifyContent: "center",
             marginBottom: 12,
           }}
-          //   onPress={() => navigation.navigate("Beranda")}
+          onPress={toggleModal}
         >
           <Text
             style={{
@@ -334,6 +341,63 @@ const TambahBuku = ({ navigation }) => {
         ></View>
         {sectionDuaTambahBuku()}
         {button()}
+        <Modal
+          isVisible={isModalVisible}
+          animationIn="fadeIn"
+          animationOut="fadeOut"
+          hasBackdrop={false}
+          backdropColor="black"
+          backdropOpacity={0.8}
+          style={{ justifyContent: "center", alignItems: "center" }}
+        >
+          <View
+            style={{
+              width: 300,
+              height: 200,
+              backgroundColor: "white",
+              justifyContent: "center",
+              // alignItems: "center",
+              borderRadius: 12,
+            }}
+          >
+            <View style={{ marginTop: 35, alignItems: "center" }}>
+              <Text
+                style={{
+                  fontSize: SIZES.h3,
+                  fontWeight: "bold",
+                  // marginTop: 10,
+                }}
+              >
+                Koleksi Berhasil Disimpan
+              </Text>
+              <Image
+                source={gif.simpan}
+                resizeMode="contain"
+                style={{
+                  width: 80,
+                  position: "absolute",
+                  bottom: -185,
+                  left: 110,
+                }}
+              />
+            </View>
+
+            <TouchableOpacity
+              // onPress={() => navigation.navigate("Beranda")}
+              onPress={toggleModal}
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative",
+                top: 30,
+              }}
+            >
+              <Text style={{ fontSize: SIZES.h3, color: COLORS.primary }}>
+                Oke
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </Modal>
       </KeyboardAvoidingView>
     </ScrollView>
   );

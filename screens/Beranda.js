@@ -92,7 +92,7 @@ const Beranda = ({ navigation }) => {
                 fontFamily: "Roboto",
               }}
             >
-              Nama Tim
+              Stock Opname Tesis
             </Text>
             <View style={{ alignItems: "center" }}>
               <Text
@@ -135,7 +135,7 @@ const Beranda = ({ navigation }) => {
                   fontFamily: "Roboto",
                 }}
               >
-                4 Jan 2022
+                12 Mei 2022
               </Text>
             </View>
             {/* </View> */}
@@ -155,7 +155,7 @@ const Beranda = ({ navigation }) => {
                   color: COLORS.white,
                 }}
               >
-                0
+                30
               </Text>
               <Text style={{ color: COLORS.white }}>Tersedia</Text>
             </View>
@@ -167,7 +167,7 @@ const Beranda = ({ navigation }) => {
                   color: COLORS.white,
                 }}
               >
-                0
+                24
               </Text>
               <Text style={{ color: COLORS.white }}>Weeding</Text>
             </View>
@@ -179,7 +179,7 @@ const Beranda = ({ navigation }) => {
                   color: COLORS.white,
                 }}
               >
-                0
+                2
               </Text>
               <Text style={{ color: COLORS.white }}>No Loan</Text>
             </View>
@@ -191,7 +191,7 @@ const Beranda = ({ navigation }) => {
                   color: COLORS.white,
                 }}
               >
-                0
+                5
               </Text>
               <Text style={{ color: COLORS.white }}>Perbaikan</Text>
             </View>
@@ -203,7 +203,7 @@ const Beranda = ({ navigation }) => {
                   color: COLORS.white,
                 }}
               >
-                0
+                2
               </Text>
               <Text style={{ color: COLORS.white }}>Hilang</Text>
             </View>

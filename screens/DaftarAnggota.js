@@ -74,7 +74,7 @@ const DaftarAnggota = ({ navigation }) => {
           />
           <View style={{ marginLeft: 10 }}>
             <Text style={{ fontSize: SIZES.body1, fontWeight: "bold" }}>
-              Dodi Syahputra
+              Calvin Putera Loka
             </Text>
             <Text style={{ marginTop: 5 }}>Pustakwan Senior</Text>
           </View>

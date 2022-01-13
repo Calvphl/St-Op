@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -9,11 +9,21 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   KeyboardAvoidingView,
+  StyleSheet,
 } from "react-native";
-import { SIZES, COLORS, images } from "../constants";
+import { SIZES, COLORS, images, gif } from "../constants";
 import { Ionicons } from "@expo/vector-icons";
+import Modal from "react-native-modal";
+// import DatePicker from "react-native-datepicker";
 
 const CreateTeam = ({ navigation }) => {
+  const [date, setDate] = useState(date);
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
   function headerComponent() {
     return (
       <View
@@ -97,7 +107,7 @@ const CreateTeam = ({ navigation }) => {
           alignItems: "center",
           justifyContent: "center",
         }}
-        onPress={() => navigation.navigate("Beranda")}
+        onPress={toggleModal}
       >
         <Text
           style={{
@@ -107,7 +117,7 @@ const CreateTeam = ({ navigation }) => {
             fontSize: 20,
           }}
         >
-          Selanjutnya
+          Buat Tim
         </Text>
       </TouchableOpacity>
     );
@@ -151,6 +161,64 @@ const CreateTeam = ({ navigation }) => {
         <View style={{ marginHorizontal: SIZES.padding2 * 2, marginTop: 246 }}>
           {selanjutnyaBtn()}
         </View>
+        <Modal
+          isVisible={isModalVisible}
+          animationIn="fadeIn"
+          animationOut="fadeOut"
+          hasBackdrop={false}
+          backdropColor="black"
+          backdropOpacity={0.8}
+          style={{ justifyContent: "center", alignItems: "center" }}
+        >
+          <View
+            style={{
+              width: 300,
+              height: 200,
+              backgroundColor: "white",
+              justifyContent: "center",
+              // alignItems: "center",
+              borderRadius: 12,
+            }}
+          >
+            <View style={{ marginTop: 40, alignItems: "center" }}>
+              <Text
+                style={{
+                  fontSize: SIZES.h3,
+                  fontWeight: "bold",
+                  textAlign: "center",
+                  // marginTop: 10,
+                }}
+              >
+                Berhasil Membuat dan Menambahkan Tim
+              </Text>
+              <Image
+                source={gif.buatTim}
+                resizeMode="contain"
+                style={{
+                  width: 80,
+                  position: "absolute",
+                  bottom: -170,
+                  left: 110,
+                }}
+              />
+            </View>
+
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Beranda")}
+              // onPress={toggleModal}
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative",
+                top: 20,
+              }}
+            >
+              <Text style={{ fontSize: SIZES.h3, color: COLORS.primary }}>
+                Oke
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </Modal>
       </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
   );
