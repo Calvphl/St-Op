@@ -44,9 +44,9 @@ const Bibliografi = ({ navigation }) => {
             marginTop: 38,
           }}
         >
-          <TouchableOpacity>
+          {/* <TouchableOpacity>
             <FontAwesome5 name="sort" size={31} color={COLORS.black} />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
     );
@@ -201,7 +201,7 @@ const Bibliografi = ({ navigation }) => {
         <ScrollView style={{ marginBottom: 70 }}>
           {headerComponent()}
           {dropDownComponent()}
-          {renderSearch()}
+          {/* {renderSearch()} */}
           {mainContent()}
           {mainContent()}
           {mainContent()}

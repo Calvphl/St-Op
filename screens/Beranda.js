@@ -39,14 +39,6 @@ const Beranda = ({ navigation }) => {
                 <View
                   style={{
                     paddingHorizontal: 15,
-                    // borderWidth: 1,
-                    // borderColor: COLORS.primary,
-                    // shadowColor: "#c7c7c7",
-                    // shadowOffset: { width: 0, height: 1 },
-                    // shadowOpacity: 0.8,
-                    // shadowRadius: SIZES.radius,
-                    // borderRadius: SIZES.radius,
-                    // elevation: 5,
                   }}
                 >
                   <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -387,7 +379,8 @@ const Beranda = ({ navigation }) => {
     return (
       <View
         style={{
-          height: 174,
+          // height: 174,
+          height: 144,
           marginHorizontal: SIZES.padding2 * 2,
           backgroundColor: COLORS.white,
           marginTop: 17,
@@ -432,7 +425,7 @@ const Beranda = ({ navigation }) => {
         </TouchableOpacity>
 
         {/* tambah dari excel */}
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={{ flexDirection: "row", justifyContent: "space-between" }}
         >
           <View>
@@ -453,7 +446,7 @@ const Beranda = ({ navigation }) => {
             color={COLORS.grey}
             style={{ marginTop: 9 }}
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         {/* resinkronasi */}
         <TouchableOpacity
@@ -587,11 +580,11 @@ const Beranda = ({ navigation }) => {
     <ScrollView style={{ marginBottom: 70 }}>
       {headerComponent()}
       {banner()}
-      {renderSearch()}
+      {/* {renderSearch()} */}
       {hitungBuku()}
       {tambahKoleksiBuku()}
       {tambahAnggota()}
-      {riwayatStock()}
+      {/* {riwayatStock()} */}
     </ScrollView>
   );
 };

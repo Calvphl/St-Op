@@ -44,13 +44,13 @@ const Detail = ({ navigation }) => {
               Detail
             </Text>
           </View>
-          <TouchableOpacity>
+          {/* <TouchableOpacity>
             <Entypo
               name="dots-three-horizontal"
               size={36}
               color={COLORS.black}
             />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
     );
@@ -142,7 +142,16 @@ const Detail = ({ navigation }) => {
             <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
               Kode Bar
             </Text>
-            <View style={{ flexDirection: "row" }}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Text
+                style={{
+                  fontSize: SIZES.body1,
+                  color: COLORS.black,
+                  marginRight: 10,
+                }}
+              >
+                20178972
+              </Text>
               <MaterialCommunityIcons
                 name="barcode"
                 size={27}

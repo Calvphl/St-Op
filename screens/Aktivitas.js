@@ -130,7 +130,7 @@ const Aktivitas = ({ navigation }) => {
           Catatan Inventarisasi
         </Text>
       </View>
-      {renderSearch()}
+      {/* {renderSearch()} */}
       {renderNote()}
       {renderNote()}
       {renderNote()}
