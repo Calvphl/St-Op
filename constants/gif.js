@@ -5,5 +5,15 @@ const kode = require("../assets/gif/kode.png");
 const resinkronisasi = require("../assets/gif/resinkronisasi.png");
 const simpan = require("../assets/gif/simpan.png");
 const send = require("../assets/gif/send.png");
+const eyes = require("../assets/gif/eyes.png");
 
-export default { login, daftar, buatTim, kode, resinkronisasi, simpan, send };
+export default {
+  login,
+  daftar,
+  buatTim,
+  kode,
+  resinkronisasi,
+  simpan,
+  send,
+  eyes,
+};
