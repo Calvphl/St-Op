@@ -133,7 +133,7 @@ const Riwayat = ({ navigation }) => {
   function sectionTwoRiwayat() {
     return (
       <TouchableOpacity
-        // onPress={gotoDetail}
+        // onPress={() => navigation.navigate("Detail")}
         style={{
           flexDirection: "row",
           paddingHorizontal: SIZES.padding2 * 2,

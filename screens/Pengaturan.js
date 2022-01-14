@@ -85,6 +85,7 @@ const Pengaturan = ({ navigation }) => {
           style={{ marginHorizontal: 10, position: "relative", bottom: 140 }}
         >
           <TouchableOpacity
+            onPress={() => navigation.navigate("PengaturanAkun")}
             style={{
               flexDirection: "row",
               alignItems: "center",
