@@ -317,7 +317,7 @@ const Detail = ({ navigation }) => {
                   color: COLORS.black,
                 }}
               >
-                Ada
+                Tersedia
               </Text>
             </View>
           </View>
