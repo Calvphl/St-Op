@@ -23,26 +23,46 @@ const Aktivitas = ({ navigation }) => {
         <TouchableOpacity
           style={{
             position: "absolute",
-            top: 148,
+            top: 147,
             left: 35,
             zIndex: 10,
           }}
         >
           <Ionicons name="ios-search" size={22} color={COLORS.grey} />
         </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            position: "absolute",
+            top: 147,
+            left: 318,
+            zIndex: 10,
+            borderLeftColor: COLORS.grey,
+            borderLeftWidth: 1,
+            paddingLeft: 12,
+          }}
+        >
+          {/* <MaterialCommunityIcons
+            name="barcode-scan"
+            size={22}
+            color={COLORS.primary}
+          /> */}
+          <Text style={{ fontSize: SIZES.body1, color: COLORS.grey }}>
+            Cari
+          </Text>
+        </TouchableOpacity>
         <TextInput
-          placeholder="Cari"
+          placeholder="Nama inventarisasi "
           placeholderTextColor={COLORS.grey}
           style={{
-            fontSize: SIZES.h3,
+            fontSize: SIZES.sub,
             justifyContent: "center",
             marginTop: 20,
             height: 46,
             backgroundColor: COLORS.white,
             borderRadius: SIZES.radius,
             paddingLeft: 52,
-            paddingRight: 20,
-            color: COLORS.primary,
+            paddingRight: 70,
+            color: COLORS.black,
             marginHorizontal: SIZES.padding2 * 2,
           }}
         />
@@ -174,7 +194,7 @@ const Aktivitas = ({ navigation }) => {
           Catatan Inventarisasi
         </Text>
       </View>
-      {/* {renderSearch()} */}
+      {renderSearch()}
       {renderNote()}
       {renderNote()}
       {renderNote()}
