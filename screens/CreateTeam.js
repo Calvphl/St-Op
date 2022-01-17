@@ -232,7 +232,7 @@ const CreateTeam = ({ navigation }) => {
             fontSize: 16,
             marginBottom: SIZES.padding2 * 2,
           }}
-          placeholder="Nama tim"
+          placeholder="Nama tim inventarisasi"
           placeholderTextColor={COLORS.grey}
           selectionColor={COLORS.black}
         />
