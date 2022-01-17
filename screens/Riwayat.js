@@ -65,9 +65,23 @@ const Riwayat = ({ navigation }) => {
           //   marginBottom: 10,
         }}
       >
-        <Text style={{ fontSize: SIZES.sub, color: "#979797" }}>
-          14 Desember 2021 09:23:43
-        </Text>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={{ fontSize: SIZES.sub, color: "#979797" }}>
+            Tgl mulai: 4/01/2022
+          </Text>
+          <Text style={{ fontSize: SIZES.sub, color: "#979797" }}>
+            Jam: 10:03:43
+          </Text>
+        </View>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={{ fontSize: SIZES.sub, color: "#979797" }}>
+            Tgl selesai: 12/05/2022
+          </Text>
+          <Text style={{ fontSize: SIZES.sub, color: "#979797" }}>
+            Jam: 15:23:18
+          </Text>
+        </View>
+
         <View
           style={{
             marginTop: 10,
@@ -83,7 +97,7 @@ const Riwayat = ({ navigation }) => {
               color: COLORS.primary,
             }}
           >
-            Info Inventarisasi
+            Stock Opname 2022
           </Text>
         </View>
         <View
@@ -102,13 +116,13 @@ const Riwayat = ({ navigation }) => {
                 marginBottom: 14,
               }}
             >
-              12
+              1196
             </Text>
             <Text style={{ fontSize: SIZES.body1, color: "#979797" }}>
-              Eksemplar
+              Total Eksemplar
             </Text>
           </View>
-          <View style={{ alignItems: "center", width: 50, bottom: 4 }}>
+          <View style={{ alignItems: "center", width: 150, bottom: 4 }}>
             <Image
               source={images.avatar}
               resizeMode="contain"
@@ -122,7 +136,7 @@ const Riwayat = ({ navigation }) => {
                 top: 45,
               }}
             >
-              Akun 1
+              Calvin (Admin)
             </Text>
           </View>
         </View>
@@ -132,48 +146,223 @@ const Riwayat = ({ navigation }) => {
 
   function sectionTwoRiwayat() {
     return (
-      <TouchableOpacity
-        // onPress={() => navigation.navigate("Detail")}
-        style={{
-          flexDirection: "row",
-          paddingHorizontal: SIZES.padding2 * 2,
-          alignItems: "center",
-        }}
-      >
-        <Image
-          source={images.book}
-          resizeMode="contain"
-          style={{ width: 80 }}
-        />
-        <View style={{ marginLeft: 20 }}>
-          <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-            Buku 1
-          </Text>
-          <View
-            style={{
-              flexDirection: "row",
-              color: COLORS.black,
-              opacity: 0.5,
-              marginTop: 13,
-            }}
-          >
-            <Text>Sains |</Text>
-            <Text> A02 |</Text>
-            <Text> 2015</Text>
+      <>
+        <TouchableOpacity
+          // onPress={() => navigation.navigate("Detail")}
+          style={{
+            flexDirection: "row",
+            paddingHorizontal: SIZES.padding2 * 2,
+            alignItems: "center",
+          }}
+        >
+          <Image
+            source={images.avatar}
+            resizeMode="contain"
+            style={{ width: 50 }}
+          />
+          <View style={{ marginLeft: 20 }}>
+            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+              Calvin (Admin)
+            </Text>
+            <View
+              style={{
+                flexDirection: "row",
+                color: COLORS.black,
+                opacity: 0.5,
+                marginTop: 13,
+              }}
+            >
+              <Text>Pustakawan Senior</Text>
+            </View>
           </View>
-        </View>
-        <View style={{ marginLeft: 120 }}>
-          <Text
-            style={{
-              fontSize: SIZES.h3,
-              fontWeight: "bold",
-              color: COLORS.primary,
-            }}
-          >
-            5
-          </Text>
-        </View>
-      </TouchableOpacity>
+          <View style={{ marginLeft: 90, alignItems: "center" }}>
+            <Text
+              style={{
+                fontSize: SIZES.h3,
+                fontWeight: "bold",
+                color: COLORS.primary,
+              }}
+            >
+              215
+            </Text>
+            <Text style={{ fontWeight: "bold", color: COLORS.primary }}>
+              eksemplar
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          // onPress={() => navigation.navigate("Detail")}
+          style={{
+            flexDirection: "row",
+            paddingHorizontal: SIZES.padding2 * 2,
+            alignItems: "center",
+          }}
+        >
+          <Image
+            source={images.avatar}
+            resizeMode="contain"
+            style={{ width: 50 }}
+          />
+          <View style={{ marginLeft: 20 }}>
+            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+              Nirmala
+            </Text>
+            <View
+              style={{
+                flexDirection: "row",
+                color: COLORS.black,
+                opacity: 0.5,
+                marginTop: 13,
+              }}
+            >
+              <Text>Pustakawan</Text>
+            </View>
+          </View>
+          <View style={{ marginLeft: 135, alignItems: "center" }}>
+            <Text
+              style={{
+                fontSize: SIZES.h3,
+                fontWeight: "bold",
+                color: COLORS.primary,
+              }}
+            >
+              204
+            </Text>
+            <Text style={{ fontWeight: "bold", color: COLORS.primary }}>
+              eksemplar
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          // onPress={() => navigation.navigate("Detail")}
+          style={{
+            flexDirection: "row",
+            paddingHorizontal: SIZES.padding2 * 2,
+            alignItems: "center",
+          }}
+        >
+          <Image
+            source={images.avatar}
+            resizeMode="contain"
+            style={{ width: 50 }}
+          />
+          <View style={{ marginLeft: 20 }}>
+            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+              Agus
+            </Text>
+            <View
+              style={{
+                flexDirection: "row",
+                color: COLORS.black,
+                opacity: 0.5,
+                marginTop: 13,
+              }}
+            >
+              <Text>Staff Perpustakaan</Text>
+            </View>
+          </View>
+          <View style={{ marginLeft: 90, alignItems: "center" }}>
+            <Text
+              style={{
+                fontSize: SIZES.h3,
+                fontWeight: "bold",
+                color: COLORS.primary,
+              }}
+            >
+              341
+            </Text>
+            <Text style={{ fontWeight: "bold", color: COLORS.primary }}>
+              eksemplar
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          // onPress={() => navigation.navigate("Detail")}
+          style={{
+            flexDirection: "row",
+            paddingHorizontal: SIZES.padding2 * 2,
+            alignItems: "center",
+          }}
+        >
+          <Image
+            source={images.avatar}
+            resizeMode="contain"
+            style={{ width: 50 }}
+          />
+          <View style={{ marginLeft: 20 }}>
+            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+              Ria
+            </Text>
+            <View
+              style={{
+                flexDirection: "row",
+                color: COLORS.black,
+                opacity: 0.5,
+                marginTop: 13,
+              }}
+            >
+              <Text>Pustakawan</Text>
+            </View>
+          </View>
+          <View style={{ marginLeft: 135, alignItems: "center" }}>
+            <Text
+              style={{
+                fontSize: SIZES.h3,
+                fontWeight: "bold",
+                color: COLORS.primary,
+              }}
+            >
+              214
+            </Text>
+            <Text style={{ fontWeight: "bold", color: COLORS.primary }}>
+              eksemplar
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          // onPress={() => navigation.navigate("Detail")}
+          style={{
+            flexDirection: "row",
+            paddingHorizontal: SIZES.padding2 * 2,
+            alignItems: "center",
+          }}
+        >
+          <Image
+            source={images.avatar}
+            resizeMode="contain"
+            style={{ width: 50 }}
+          />
+          <View style={{ marginLeft: 20 }}>
+            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+              Asep
+            </Text>
+            <View
+              style={{
+                flexDirection: "row",
+                color: COLORS.black,
+                opacity: 0.5,
+                marginTop: 13,
+              }}
+            >
+              <Text>Staff Perpustakaan</Text>
+            </View>
+          </View>
+          <View style={{ marginLeft: 90, alignItems: "center" }}>
+            <Text
+              style={{
+                fontSize: SIZES.h3,
+                fontWeight: "bold",
+                color: COLORS.primary,
+              }}
+            >
+              234
+            </Text>
+            <Text style={{ fontWeight: "bold", color: COLORS.primary }}>
+              eksemplar
+            </Text>
+          </View>
+        </TouchableOpacity>
+      </>
     );
   }
 
@@ -181,27 +370,155 @@ const Riwayat = ({ navigation }) => {
     return (
       <View
         style={{
-          flexDirection: "row",
+          // flexDirection: "row",
           paddingHorizontal: SIZES.padding2 * 2,
           marginTop: 20,
+          marginBottom: 20,
         }}
       >
         <Text
           style={{
             fontSize: SIZES.body1,
             color: "#979797",
-            marginRight: 25,
+            // marginRight: 25,
           }}
         >
-          catatan
+          Catatan
+        </Text>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: SIZES.body1,
+              color: COLORS.black,
+              marginTop: 10,
+            }}
+          >
+            Eksemplar Tersedia:
+          </Text>
+          <Text
+            style={{ fontSize: SIZES.body1, marginRight: 160, marginTop: 10 }}
+          >
+            12
+          </Text>
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: SIZES.body1,
+              color: COLORS.black,
+              marginTop: 10,
+            }}
+          >
+            Eksemplar Weeding:
+          </Text>
+          <Text
+            style={{ fontSize: SIZES.body1, marginRight: 160, marginTop: 10 }}
+          >
+            12
+          </Text>
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: SIZES.body1,
+              color: COLORS.black,
+              marginTop: 10,
+            }}
+          >
+            Eksemplar No Loan:
+          </Text>
+          <Text
+            style={{ fontSize: SIZES.body1, marginRight: 160, marginTop: 10 }}
+          >
+            12
+          </Text>
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: SIZES.body1,
+              color: COLORS.black,
+              marginTop: 10,
+            }}
+          >
+            Eksemplar Diperbaiki:
+          </Text>
+          <Text
+            style={{ fontSize: SIZES.body1, marginRight: 160, marginTop: 10 }}
+          >
+            12
+          </Text>
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: SIZES.body1,
+              color: COLORS.black,
+              marginTop: 10,
+            }}
+          >
+            Eksemplar Hilang:
+          </Text>
+          <Text
+            style={{ fontSize: SIZES.body1, marginRight: 160, marginTop: 10 }}
+          >
+            12
+          </Text>
+        </View>
+      </View>
+    );
+  }
+
+  function keterangan() {
+    return (
+      <View
+        style={{
+          marginBottom: 70,
+          paddingHorizontal: SIZES.padding2 * 2,
+          marginTop: 20,
+        }}
+      >
+        <Text style={{ fontSize: SIZES.body1, color: "#979797" }}>
+          Keterangan
         </Text>
         <Text
           style={{
             fontSize: SIZES.body1,
             color: COLORS.black,
+            marginTop: 10,
           }}
         >
-          Jumlah awal
+          scan koleksi buku
         </Text>
       </View>
     );
@@ -220,8 +537,6 @@ const Riwayat = ({ navigation }) => {
         }}
       ></View>
       {sectionTwoRiwayat()}
-      {sectionTwoRiwayat()}
-      {sectionTwoRiwayat()}
       <View
         style={{
           borderBottomWidth: 4,
@@ -231,6 +546,15 @@ const Riwayat = ({ navigation }) => {
         }}
       ></View>
       {note()}
+      <View
+        style={{
+          borderBottomWidth: 4,
+          borderBottomColor: "#ececec",
+          position: "relative",
+          //   bottom: 25,
+        }}
+      ></View>
+      {keterangan()}
     </ScrollView>
   );
 };

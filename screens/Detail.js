@@ -213,7 +213,7 @@ const Detail = ({ navigation }) => {
                   color: COLORS.black,
                 }}
               >
-                textbook
+                Text Book
               </Text>
             </View>
           </View>

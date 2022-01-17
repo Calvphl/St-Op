@@ -121,7 +121,7 @@ const PengaturanAkun = ({ navigation }) => {
             </Text>
             <View style={{ flexDirection: "row" }}>
               <TextInput
-                placeholder="Calvin Putera Loka"
+                placeholder="Calvin"
                 placeholderTextColor={COLORS.black}
                 style={{
                   maxWidth: 180,

@@ -221,7 +221,7 @@ const Pengaturan = ({ navigation }) => {
             }}
           >
             <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Catatan Inventarisasi
+              Keterangan Inventarisasi
             </Text>
             <View style={{ flexDirection: "row" }}>
               <TextInput
@@ -229,7 +229,7 @@ const Pengaturan = ({ navigation }) => {
                 placeholderTextColor={COLORS.black}
                 numberOfLines={3}
                 style={{
-                  maxWidth: 150,
+                  maxWidth: 135,
                   maxHeight: 30,
                   fontSize: SIZES.body1,
                 }}

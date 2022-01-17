@@ -67,7 +67,7 @@ const Aktivitas = ({ navigation }) => {
         onPress={gotoRiwayat}
         style={{
           marginTop: 30,
-          marginBottom: 20,
+          marginBottom: 60,
           paddingHorizontal: SIZES.padding2 * 2,
           flexDirection: "row",
           justifyContent: "space-between",
@@ -76,14 +76,14 @@ const Aktivitas = ({ navigation }) => {
         <View>
           <Text
             style={{
-              fontSize: SIZES.body1,
+              fontSize: SIZES.h3,
               fontWeight: "bold",
               color: COLORS.black,
             }}
           >
-            14 Desember 2021
+            Stock Opname 2022
           </Text>
-          <Text
+          {/* <Text
             style={{
               fontSize: SIZES.body1,
               fontWeight: "bold",
@@ -91,25 +91,69 @@ const Aktivitas = ({ navigation }) => {
             }}
           >
             09:23:43
-          </Text>
+          </Text> */}
           <Text
             style={{
-              marginTop: 52,
+              marginTop: 10,
               fontSize: SIZES.body1,
               color: COLORS.black,
             }}
           >
-            B02 | Sosial
+            Tgl mulai: 4/01/2022
+          </Text>
+          <Text
+            style={{
+              marginTop: 10,
+              fontSize: SIZES.body1,
+              color: COLORS.black,
+            }}
+          >
+            Tgl selesai: 12/05/2022
           </Text>
         </View>
-        <View style={{ alignItems: "center" }}>
+        <View
+          style={{
+            alignItems: "center",
+            position: "absolute",
+            left: 280,
+            bottom: -45,
+          }}
+        >
           <Image
             source={images.avatar}
             resizeMode="contain"
             style={{ width: 46, position: "relative", top: 20 }}
           />
-          <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-            Akun 1
+          <Text
+            style={{
+              fontSize: SIZES.body1,
+              color: COLORS.black,
+              fontWeight: "bold",
+            }}
+          >
+            Calvin
+          </Text>
+          <Text
+            style={{
+              fontSize: SIZES.body1,
+              color: COLORS.black,
+              width: 100,
+              textAlign: "center",
+            }}
+          >
+            Pustakawan Senior
+          </Text>
+          <Text
+            style={{
+              fontSize: SIZES.body1,
+              color: COLORS.grey,
+              width: 100,
+              textAlign: "center",
+              fontStyle: "italic",
+              fontWeight: "bold",
+            }}
+          >
+            Admin
           </Text>
         </View>
       </TouchableOpacity>
@@ -131,6 +175,7 @@ const Aktivitas = ({ navigation }) => {
         </Text>
       </View>
       {/* {renderSearch()} */}
+      {renderNote()}
       {renderNote()}
       {renderNote()}
       {renderNote()}
