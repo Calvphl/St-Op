@@ -251,7 +251,7 @@ const CreateTeam = ({ navigation }) => {
             fontSize: 16,
             marginBottom: SIZES.padding2 * 2,
           }}
-          placeholder="Catatan"
+          placeholder="Keterangan"
           maxLength={300}
           placeholderTextColor={COLORS.grey}
           selectionColor={COLORS.black}
