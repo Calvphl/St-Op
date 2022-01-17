@@ -196,61 +196,61 @@ const Beranda = ({ navigation }) => {
             style={{
               flexDirection: "row",
               justifyContent: "space-around",
-              marginTop: 20,
+              marginTop: 30,
             }}
           >
             <View style={{ alignItems: "center" }}>
               <Text
                 style={{
-                  fontSize: SIZES.large,
+                  fontSize: SIZES.h2,
                   fontWeight: "bold",
                   color: COLORS.white,
                 }}
               >
-                1324
+                4548
               </Text>
               <Text style={{ color: COLORS.white }}>Tersedia</Text>
             </View>
             <View style={{ alignItems: "center" }}>
               <Text
                 style={{
-                  fontSize: SIZES.large,
+                  fontSize: SIZES.h2,
                   fontWeight: "bold",
                   color: COLORS.white,
                 }}
               >
-                24
+                1251
               </Text>
               <Text style={{ color: COLORS.white }}>Weeding</Text>
             </View>
             <View style={{ alignItems: "center" }}>
               <Text
                 style={{
-                  fontSize: SIZES.large,
+                  fontSize: SIZES.h2,
                   fontWeight: "bold",
                   color: COLORS.white,
                 }}
               >
-                2
+                312
               </Text>
               <Text style={{ color: COLORS.white }}>No Loan</Text>
             </View>
             <View style={{ alignItems: "center" }}>
               <Text
                 style={{
-                  fontSize: SIZES.large,
+                  fontSize: SIZES.h2,
                   fontWeight: "bold",
                   color: COLORS.white,
                 }}
               >
-                5
+                24
               </Text>
               <Text style={{ color: COLORS.white }}>Perbaikan</Text>
             </View>
             <View style={{ alignItems: "center" }}>
               <Text
                 style={{
-                  fontSize: SIZES.large,
+                  fontSize: SIZES.h2,
                   fontWeight: "bold",
                   color: COLORS.white,
                 }}

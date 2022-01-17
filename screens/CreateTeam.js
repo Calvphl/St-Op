@@ -313,7 +313,7 @@ const CreateTeam = ({ navigation }) => {
               color: COLORS.black,
             }}
           >
-            Buat Profil Tim Inventarisasi Kamu
+            Buat Profil Tim Inventarisasi
           </Text>
           <Image
             source={images.grup}

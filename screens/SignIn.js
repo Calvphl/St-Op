@@ -35,7 +35,7 @@ const SignIn = ({ navigation }) => {
               borderWidth: 2,
               borderRadius: SIZES.radius,
               height: 50,
-              color: COLORS.primary,
+              color: COLORS.black,
               fontFamily: "Roboto",
               fontSize: 16,
             }}
@@ -55,7 +55,7 @@ const SignIn = ({ navigation }) => {
               borderWidth: 2,
               borderRadius: SIZES.radius,
               height: 50,
-              color: COLORS.primary,
+              color: COLORS.black,
               fontFamily: "Roboto",
               fontSize: 16,
             }}
@@ -134,11 +134,11 @@ const SignIn = ({ navigation }) => {
         </View>
         <View style={{ marginTop: 68 }}>{formSignIn()}</View>
         <View style={{ alignItems: "flex-end", marginTop: 10 }}>
-          <TouchableOpacity>
+          {/* <TouchableOpacity>
             <Text style={{ color: COLORS.primary }}>Lupa kata sandi</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
-        <View style={{ marginTop: 350 }}>{okeBtn()}</View>
+        <View style={{ marginTop: 370 }}>{okeBtn()}</View>
 
         <Modal
           isVisible={isModalVisible}

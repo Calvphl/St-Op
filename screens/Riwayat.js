@@ -116,7 +116,7 @@ const Riwayat = ({ navigation }) => {
                 marginBottom: 14,
               }}
             >
-              1196
+              6135
             </Text>
             <Text style={{ fontSize: SIZES.body1, color: "#979797" }}>
               Total Eksemplar
@@ -183,7 +183,7 @@ const Riwayat = ({ navigation }) => {
                 color: COLORS.primary,
               }}
             >
-              215
+              1324
             </Text>
             <Text style={{ fontWeight: "bold", color: COLORS.primary }}>
               eksemplar
@@ -226,7 +226,7 @@ const Riwayat = ({ navigation }) => {
                 color: COLORS.primary,
               }}
             >
-              204
+              1253
             </Text>
             <Text style={{ fontWeight: "bold", color: COLORS.primary }}>
               eksemplar
@@ -269,7 +269,7 @@ const Riwayat = ({ navigation }) => {
                 color: COLORS.primary,
               }}
             >
-              341
+              1331
             </Text>
             <Text style={{ fontWeight: "bold", color: COLORS.primary }}>
               eksemplar
@@ -312,7 +312,7 @@ const Riwayat = ({ navigation }) => {
                 color: COLORS.primary,
               }}
             >
-              214
+              1114
             </Text>
             <Text style={{ fontWeight: "bold", color: COLORS.primary }}>
               eksemplar
@@ -355,7 +355,7 @@ const Riwayat = ({ navigation }) => {
                 color: COLORS.primary,
               }}
             >
-              234
+              1234
             </Text>
             <Text style={{ fontWeight: "bold", color: COLORS.primary }}>
               eksemplar
@@ -404,7 +404,7 @@ const Riwayat = ({ navigation }) => {
           <Text
             style={{ fontSize: SIZES.body1, marginRight: 160, marginTop: 10 }}
           >
-            12
+            4548
           </Text>
         </View>
         <View
@@ -426,7 +426,7 @@ const Riwayat = ({ navigation }) => {
           <Text
             style={{ fontSize: SIZES.body1, marginRight: 160, marginTop: 10 }}
           >
-            12
+            1251
           </Text>
         </View>
         <View
@@ -448,7 +448,7 @@ const Riwayat = ({ navigation }) => {
           <Text
             style={{ fontSize: SIZES.body1, marginRight: 160, marginTop: 10 }}
           >
-            12
+            312
           </Text>
         </View>
         <View
@@ -470,7 +470,7 @@ const Riwayat = ({ navigation }) => {
           <Text
             style={{ fontSize: SIZES.body1, marginRight: 160, marginTop: 10 }}
           >
-            12
+            24
           </Text>
         </View>
         <View
@@ -492,7 +492,7 @@ const Riwayat = ({ navigation }) => {
           <Text
             style={{ fontSize: SIZES.body1, marginRight: 160, marginTop: 10 }}
           >
-            12
+            121
           </Text>
         </View>
       </View>

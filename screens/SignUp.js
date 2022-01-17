@@ -29,7 +29,7 @@ const SignUp = ({ navigation }) => {
   const data = [
     { label: "Pustakawan Senior", value: 1 },
     { label: "Pustakawan", value: 2 },
-    { label: "Staff", value: 3 },
+    { label: "Staff Perpustakaan", value: 3 },
   ];
 
   function dropDownComponent() {
@@ -73,7 +73,7 @@ const SignUp = ({ navigation }) => {
               borderWidth: 2,
               borderRadius: SIZES.radius,
               height: 50,
-              color: COLORS.primary,
+              color: COLORS.black,
               fontFamily: "Roboto",
               fontSize: 16,
               marginBottom: SIZES.padding2 * 2,
@@ -93,7 +93,7 @@ const SignUp = ({ navigation }) => {
               borderWidth: 2,
               borderRadius: SIZES.radius,
               height: 50,
-              color: COLORS.primary,
+              color: COLORS.black,
               fontFamily: "Roboto",
               fontSize: 16,
               marginBottom: SIZES.padding2 * 2,
@@ -113,7 +113,7 @@ const SignUp = ({ navigation }) => {
               borderWidth: 2,
               borderRadius: SIZES.radius,
               height: 50,
-              color: COLORS.primary,
+              color: COLORS.black,
               fontFamily: "Roboto",
               fontSize: 16,
               marginBottom: SIZES.padding2 * 2,
@@ -134,7 +134,7 @@ const SignUp = ({ navigation }) => {
               borderWidth: 2,
               borderRadius: SIZES.radius,
               height: 50,
-              color: COLORS.primary,
+              color: COLORS.black,
               fontFamily: "Roboto",
               fontSize: 16,
               marginBottom: SIZES.padding2 * 2,
@@ -171,7 +171,7 @@ const SignUp = ({ navigation }) => {
               borderWidth: 2,
               borderRadius: SIZES.radius,
               height: 50,
-              color: COLORS.primary,
+              color: COLORS.black,
               fontFamily: "Roboto",
               fontSize: 16,
               marginBottom: SIZES.padding2 * 2,
@@ -337,7 +337,7 @@ const styles = StyleSheet.create({
     color: COLORS.grey,
   },
   selectedTextStyle: {
-    color: COLORS.primary,
+    color: COLORS.black,
     fontSize: SIZES.body1,
   },
 });
