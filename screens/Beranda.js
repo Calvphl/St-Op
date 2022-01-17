@@ -51,7 +51,7 @@ const Beranda = ({ navigation }) => {
                       <Text style={{ fontSize: 15, fontWeight: "bold" }}>
                         Ria Rinjani
                       </Text>
-                      <Text>Selesai melakukan scanning pada lantai 2</Text>
+                      <Text>Finish stock take (Stock Opname 2022)</Text>
                     </View>
                   </View>
                   <View
@@ -71,7 +71,7 @@ const Beranda = ({ navigation }) => {
                       <Text style={{ fontSize: 15, fontWeight: "bold" }}>
                         Agus Mardi
                       </Text>
-                      <Text>Selesai melakukan scanning pada rak A01 - A10</Text>
+                      <Text>Initialize stock take (Stock Opname 2022)</Text>
                     </View>
                   </View>
                 </View>
@@ -144,7 +144,7 @@ const Beranda = ({ navigation }) => {
                 fontFamily: "Roboto",
               }}
             >
-              Stock Opname Tesis
+              Stock Opname 2022
             </Text>
             <View style={{ alignItems: "center" }}>
               <Text
@@ -207,7 +207,7 @@ const Beranda = ({ navigation }) => {
                   color: COLORS.white,
                 }}
               >
-                30
+                1324
               </Text>
               <Text style={{ color: COLORS.white }}>Tersedia</Text>
             </View>
@@ -255,7 +255,7 @@ const Beranda = ({ navigation }) => {
                   color: COLORS.white,
                 }}
               >
-                2
+                121
               </Text>
               <Text style={{ color: COLORS.white }}>Hilang</Text>
             </View>
@@ -338,7 +338,7 @@ const Beranda = ({ navigation }) => {
             marginTop: 20,
           }}
         >
-          Hitung Koleksi Buku
+          Scan Kode Koleksi Buku
         </Text>
         <TouchableOpacity
           onPress={gotoScan}
@@ -353,7 +353,7 @@ const Beranda = ({ navigation }) => {
             <Text
               style={{ fontSize: SIZES.body1, marginTop: 11, marginLeft: 36 }}
             >
-              Pindai dan cek jumlah koleksi
+              Pindai dan cek status koleksi
             </Text>
           </View>
           <MaterialIcons
@@ -413,7 +413,7 @@ const Beranda = ({ navigation }) => {
             <Text
               style={{ fontSize: SIZES.body1, marginTop: 11, marginLeft: 36 }}
             >
-              Daftarkan koleksi
+              Daftarkan koleksi buku
             </Text>
           </View>
           <MaterialIcons

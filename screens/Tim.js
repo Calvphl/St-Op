@@ -242,7 +242,7 @@ const Tim = ({ navigation }) => {
                   fontWeight: "bold",
                 }}
               >
-                Buat Tim Baru
+                Buat Tim Inventarisasi Baru
               </Text>
             </TouchableOpacity>
             <View style={{ position: "absolute", top: 67, left: 63 }}>
@@ -300,10 +300,10 @@ const Tim = ({ navigation }) => {
                   fontWeight: "bold",
                 }}
               >
-                Gabung Dengan Tim
+                Gabung Tim Dengan Kode Undangan
               </Text>
             </View>
-            <View style={{ position: "absolute", top: 67, left: 63 }}>
+            <View style={{ position: "absolute", top: 77, left: 63 }}>
               <Text
                 style={{
                   fontSize: SIZES.body3,

@@ -58,7 +58,7 @@ const Bibliografi = ({ navigation }) => {
         <TouchableOpacity
           style={{
             position: "absolute",
-            top: 148,
+            top: 144,
             left: 35,
             zIndex: 10,
           }}
@@ -68,7 +68,7 @@ const Bibliografi = ({ navigation }) => {
         <TouchableOpacity
           style={{
             position: "absolute",
-            top: 149,
+            top: 145,
             left: 318,
             zIndex: 10,
             borderLeftColor: COLORS.grey,
@@ -76,14 +76,17 @@ const Bibliografi = ({ navigation }) => {
             paddingLeft: 12,
           }}
         >
-          <MaterialCommunityIcons
+          {/* <MaterialCommunityIcons
             name="barcode-scan"
             size={22}
             color={COLORS.primary}
-          />
+          /> */}
+          <Text style={{ fontSize: SIZES.body1, color: COLORS.grey }}>
+            Cari
+          </Text>
         </TouchableOpacity>
         <TextInput
-          placeholder="Judul, kode bar, kategori"
+          placeholder="Judul / Kode Eksemplar "
           placeholderTextColor={COLORS.grey}
           style={{
             fontSize: SIZES.sub,
@@ -94,7 +97,7 @@ const Bibliografi = ({ navigation }) => {
             borderRadius: SIZES.radius,
             paddingLeft: 52,
             paddingRight: 70,
-            color: COLORS.primary,
+            color: COLORS.black,
             marginHorizontal: SIZES.padding2 * 2,
           }}
         />
@@ -128,8 +131,14 @@ const Bibliografi = ({ navigation }) => {
           style={{ width: 80 }}
         />
         <View style={{ marginLeft: 20 }}>
-          <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-            Buku 1
+          <Text
+            style={{
+              fontSize: SIZES.body1,
+              color: COLORS.black,
+              fontWeight: "bold",
+            }}
+          >
+            Kimia 7 level
           </Text>
           <View
             style={{
@@ -139,12 +148,18 @@ const Bibliografi = ({ navigation }) => {
               marginTop: 13,
             }}
           >
-            <Text>Sains |</Text>
-            <Text> A02 |</Text>
-            <Text> 2015</Text>
+            <Text>0000169594</Text>
+            {/* <Text> A02 |</Text>
+            <Text> 2015</Text> */}
           </View>
         </View>
-        <View style={{ marginLeft: 120 }}>
+        <View
+          style={{
+            marginLeft: 100,
+            alignItems: "center",
+            paddingRight: SIZES.padding2 * 2,
+          }}
+        >
           <Text
             style={{
               fontSize: SIZES.h3,
@@ -152,7 +167,16 @@ const Bibliografi = ({ navigation }) => {
               color: COLORS.primary,
             }}
           >
-            5
+            2
+          </Text>
+          <Text
+            style={{
+              fontSize: SIZES.body2,
+              fontWeight: "bold",
+              color: COLORS.primary,
+            }}
+          >
+            salinan
           </Text>
         </View>
       </TouchableOpacity>
@@ -160,11 +184,22 @@ const Bibliografi = ({ navigation }) => {
   }
 
   function dropDownComponent() {
-    const [value, setValue] = useState(null);
+    // const [value, setValue] = useState(null);
 
     return (
-      <View>
-        <Dropdown
+      <View style={{ paddingHorizontal: SIZES.padding2 * 2 }}>
+        <Text
+          style={{
+            fontSize: SIZES.h2,
+            fontFamily: "Roboto",
+            fontWeight: "bold",
+            color: COLORS.black,
+            marginRight: 10,
+          }}
+        >
+          Bibliografi
+        </Text>
+        {/* <Dropdown
           style={styles.dropdown}
           selectedTextStyle={styles.selectedTextStyle}
           data={data}
@@ -187,7 +222,7 @@ const Bibliografi = ({ navigation }) => {
               style={{ marginRight: 200, marginTop: 5 }}
             />
           )}
-        />
+        /> */}
       </View>
     );
   }
@@ -201,7 +236,7 @@ const Bibliografi = ({ navigation }) => {
         <ScrollView style={{ marginBottom: 70 }}>
           {headerComponent()}
           {dropDownComponent()}
-          {/* {renderSearch()} */}
+          {renderSearch()}
           {mainContent()}
           {mainContent()}
           {mainContent()}

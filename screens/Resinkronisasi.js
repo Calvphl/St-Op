@@ -159,7 +159,7 @@ const Resinkronisasi = ({ navigation }) => {
                 // marginTop: 10,
               }}
             >
-              Resinkronisasi Berhasil
+              Resinkronisasi Selesai
             </Text>
             <Image
               source={gif.resinkronisasi}

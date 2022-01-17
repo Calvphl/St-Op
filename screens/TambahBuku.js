@@ -8,10 +8,12 @@ import {
   ScrollView,
   Keyboard,
   KeyboardAvoidingView,
+  StyleSheet,
 } from "react-native";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { SIZES, COLORS, images, gif } from "../constants";
 import Modal from "react-native-modal";
+import { Dropdown } from "react-native-element-dropdown";
 
 const TambahBuku = ({ navigation }) => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -19,6 +21,31 @@ const TambahBuku = ({ navigation }) => {
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
+
+  const [isFocusTipe, setIsFocusTipe] = useState(false);
+  const dataTipe = [
+    { labelTipe: "Tipe Koleksi", valueTipe: 1 },
+    { labelTipe: "Text Book", valueTipe: 2 },
+    { labelTipe: "Non Text Book", valueTipe: 3 },
+  ];
+
+  const [isFocusNoPanggil, setIsFocusNoPanggil] = useState(false);
+  const dataNoPanggil = [
+    { labelNoPanggil: "Nomor Panggil", valueNoPanggil: 1 },
+    { labelNoPanggil: "004 Sut p", valueNoPanggil: 2 },
+    { labelNoPanggil: "618.92 Tin a", valueNoPanggil: 3 },
+    { labelNoPanggil: "336.185 Ira b", valueNoPanggil: 4 },
+    { labelNoPanggil: "115.8 Ric r", valueNoPanggil: 5 },
+  ];
+
+  const [isFocusKlasifikasi, setIsFocusKlasifikasi] = useState(false);
+  const dataKlasifikasi = [
+    { labelKlasifikasi: "Klasifikasi", valueKlasifikasi: 1 },
+    { labelKlasifikasi: "336.185", valueKlasifikasi: 2 },
+    { labelKlasifikasi: "155.8", valueKlasifikasi: 3 },
+    { labelKlasifikasi: "2X2 307 8", valueKlasifikasi: 4 },
+    { labelKlasifikasi: "371.39", valueKlasifikasi: 5 },
+  ];
 
   function headerComponent() {
     return (
@@ -40,7 +67,7 @@ const TambahBuku = ({ navigation }) => {
           <TouchableOpacity onPress={() => navigation.navigate("Beranda")}>
             <Ionicons name="close" size={36} color={COLORS.black} />
           </TouchableOpacity>
-          <Text
+          {/* <Text
             style={{
               fontSize: SIZES.body1,
               color: COLORS.black,
@@ -48,7 +75,7 @@ const TambahBuku = ({ navigation }) => {
             }}
           >
             Tambah Buku
-          </Text>
+          </Text> */}
         </View>
       </View>
     );
@@ -78,24 +105,26 @@ const TambahBuku = ({ navigation }) => {
             }}
           >
             <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Kode Bar
+              Kode Eksemplar
             </Text>
             <TextInput
-              placeholder="Tulis Kode bar"
+              placeholder="Masukkan Kode Eksemplar"
               keyboardType="numeric"
+              maxLength={11}
               style={{
-                maxWidth: 150,
+                // marginRight: 5,
+                maxWidth: 195,
                 fontSize: SIZES.body1,
                 color: "#979797",
               }}
             />
 
-            <MaterialIcons
+            {/* <MaterialIcons
               name="keyboard-arrow-right"
               size={25}
               color={COLORS.grey}
               style={{ marginLeft: 5 }}
-            />
+            /> */}
           </View>
         </View>
         <View style={{ marginBottom: 14 }}>
@@ -110,20 +139,20 @@ const TambahBuku = ({ navigation }) => {
               Judul Buku
             </Text>
             <TextInput
-              placeholder="Masukkan Teks"
+              placeholder="Masukkan Judul"
               style={{
-                maxWidth: 150,
+                maxWidth: 195,
                 fontSize: SIZES.body1,
                 color: "#979797",
               }}
             />
 
-            <MaterialIcons
+            {/* <MaterialIcons
               name="keyboard-arrow-right"
               size={25}
               color={COLORS.grey}
               style={{ marginLeft: 5 }}
-            />
+            /> */}
           </View>
         </View>
       </View>
@@ -131,6 +160,10 @@ const TambahBuku = ({ navigation }) => {
   }
 
   function sectionDuaTambahBuku() {
+    const [valueTipe, setValueTipe] = useState(null);
+    const [valueNoPanggil, setValueNoPanggil] = useState(null);
+    const [valueKlasifikasi, setValueKlasifikasi] = useState(null);
+
     return (
       <View
         style={{
@@ -157,112 +190,106 @@ const TambahBuku = ({ navigation }) => {
             }}
           >
             <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Jenis Buku
+              ISBN / ISSN
             </Text>
             <TextInput
-              placeholder="Masukkan Teks"
-              style={{
-                maxWidth: 150,
-                fontSize: SIZES.body1,
-                color: "#979797",
-              }}
-            />
-
-            <MaterialIcons
-              name="keyboard-arrow-right"
-              size={25}
-              color={COLORS.grey}
-              style={{ marginLeft: 5 }}
-            />
-          </View>
-        </View>
-        <View style={{ marginBottom: 14 }}>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              marginBottom: 14,
-            }}
-          >
-            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Tahun Terbit
-            </Text>
-            <TextInput
-              placeholder="Masukkan tahun"
-              maxLength={4}
+              placeholder="Masukkan ISBN / ISSN"
+              maxLength={13}
               keyboardType="numeric"
               style={{
-                maxWidth: 150,
+                maxWidth: 160,
                 fontSize: SIZES.body1,
                 color: "#979797",
               }}
             />
 
-            <MaterialIcons
+            {/* <MaterialIcons
               name="keyboard-arrow-right"
               size={25}
               color={COLORS.grey}
               style={{ marginLeft: 5 }}
-            />
+            /> */}
           </View>
         </View>
         <View style={{ marginBottom: 14 }}>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              marginBottom: 14,
+          <Dropdown
+            style={styles.dropdown}
+            selectedTextStyle={styles.selectedTextStyle}
+            data={dataTipe}
+            maxHeight={160}
+            labelField="labelTipe"
+            valueField="valueTipe"
+            placeholder={dataTipe[0].labelTipe}
+            placeholderStyle={styles.placeholder}
+            value={valueTipe}
+            onFocus={() => setIsFocusTipe(true)}
+            onChange={(item) => {
+              setValueTipe(item.valueTipe);
+              setIsFocusTipe(false);
             }}
-          >
-            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Bidang Ilmu
-            </Text>
-            <TextInput
-              placeholder="Masukkan Teks"
-              style={{
-                maxWidth: 150,
-                fontSize: SIZES.body1,
-                color: "#979797",
-              }}
-            />
-
-            <MaterialIcons
-              name="keyboard-arrow-right"
-              size={25}
-              color={COLORS.grey}
-              style={{ marginLeft: 5 }}
-            />
-          </View>
+            renderRightIcon={() => (
+              <Ionicons
+                name="md-chevron-down"
+                size={24}
+                color={COLORS.grey}
+                style={{ marginTop: 5 }}
+              />
+            )}
+          />
         </View>
         <View style={{ marginBottom: 14 }}>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              marginBottom: 14,
+          <Dropdown
+            style={styles.dropdown}
+            selectedTextStyle={styles.selectedTextStyle}
+            data={dataNoPanggil}
+            maxHeight={160}
+            labelField="labelNoPanggil"
+            valueField="valueNoPanggil"
+            placeholder={dataNoPanggil[0].labelNoPanggil}
+            placeholderStyle={styles.placeholder}
+            value={valueNoPanggil}
+            onFocus={() => setIsFocusNoPanggil(true)}
+            onChange={(item) => {
+              setValueNoPanggil(item.valueNoPanggil);
+              setIsFocusNoPanggil(false);
             }}
-          >
-            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Kelompok Buku
-            </Text>
-            <TextInput
-              placeholder="Masukkan Teks"
-              style={{
-                maxWidth: 150,
-                fontSize: SIZES.body1,
-                color: "#979797",
-              }}
-            />
-
-            <MaterialIcons
-              name="keyboard-arrow-right"
-              size={25}
-              color={COLORS.grey}
-              style={{ marginLeft: 5 }}
-            />
-          </View>
+            renderRightIcon={() => (
+              <Ionicons
+                name="md-chevron-down"
+                size={24}
+                color={COLORS.grey}
+                style={{ marginTop: 5 }}
+              />
+            )}
+          />
         </View>
         <View style={{ marginBottom: 14 }}>
+          <Dropdown
+            style={styles.dropdown}
+            selectedTextStyle={styles.selectedTextStyle}
+            data={dataKlasifikasi}
+            maxHeight={160}
+            labelField="labelKlasifikasi"
+            valueField="valueKlasifikasi"
+            placeholder={dataKlasifikasi[0].labelKlasifikasi}
+            placeholderStyle={styles.placeholder}
+            value={valueKlasifikasi}
+            onFocus={() => setIsFocusKlasifikasi(true)}
+            onChange={(item) => {
+              setValueKlasifikasi(item.valueKlasifikasi);
+              setIsFocusKlasifikasi(false);
+            }}
+            renderRightIcon={() => (
+              <Ionicons
+                name="md-chevron-down"
+                size={24}
+                color={COLORS.grey}
+                style={{ marginTop: 5 }}
+              />
+            )}
+          />
+        </View>
+        {/* <View style={{ marginBottom: 14 }}>
           <View
             style={{
               flexDirection: "row",
@@ -289,14 +316,14 @@ const TambahBuku = ({ navigation }) => {
               style={{ marginLeft: 5 }}
             />
           </View>
-        </View>
+        </View> */}
       </View>
     );
   }
 
   function button() {
     return (
-      <View style={{ marginHorizontal: SIZES.padding2 * 2, marginTop: 66 }}>
+      <View style={{ marginHorizontal: SIZES.padding2 * 2, marginTop: 130 }}>
         {/* Batal */}
         <TouchableOpacity
           style={{
@@ -404,3 +431,24 @@ const TambahBuku = ({ navigation }) => {
 };
 
 export default TambahBuku;
+
+const styles = StyleSheet.create({
+  dropdown: {
+    marginTop: -10,
+    marginBottom: 10,
+  },
+  placeholder: {
+    fontSize: SIZES.body1,
+    fontFamily: "Roboto",
+    // fontWeight: "bold",
+    color: COLORS.black,
+    marginRight: 10,
+  },
+  selectedTextStyle: {
+    fontSize: SIZES.body1,
+    fontFamily: "Roboto",
+    // fontWeight: "bold",
+    color: COLORS.black,
+    marginRight: 10,
+  },
+});

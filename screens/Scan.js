@@ -32,7 +32,7 @@ export default function Scan({ navigation }) {
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
-    Alert.alert(`${data}\nScanning Barcode Berhasil ✅`);
+    Alert.alert(`Kode eksemplar ${data}\nBerhasil Terdata ✅`);
     // SweetAlert.showAlertWithOptions(
     //   {
     //     title: "",
@@ -63,116 +63,116 @@ export default function Scan({ navigation }) {
     );
   }
 
-  function renderModal() {
-    return (
-      <View>
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={modalVisible}
-          onRequestClose={() => setModalVisible(!modalVisible)}
-        >
-          <View
-            style={{
-              flex: 1,
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <View
-              style={{
-                height: 237,
-                width: 303,
-                backgroundColor: COLORS.white,
-                borderRadius: SIZES.radius,
-                paddingTop: 14,
-                alignItems: "center",
-                shadowColor: "#838383",
-                shadowOffset: {
-                  width: 0,
-                  height: 2,
-                },
-                shadowOpacity: 0.25,
-                shadowRadius: 4,
-                elevation: 5,
-              }}
-            >
-              <Text
-                style={{
-                  color: COLORS.black,
-                  fontSize: 22,
-                  fontFamily: "Roboto",
-                  fontWeight: "bold",
-                }}
-              >
-                Gabung Tim
-              </Text>
-              <View style={{ maxWidth: 225, marginTop: 11 }}>
-                <Text style={{ fontSize: SIZES.body1, textAlign: "center" }}>
-                  Masukkan kode undangan yang Anda terima dari rekan Anda.
-                </Text>
-              </View>
-              <TextInput
-                style={{
-                  borderColor: COLORS.grey,
-                  borderWidth: 1,
-                  height: 58,
-                  width: 246,
-                  borderRadius: 6,
-                  marginTop: 11,
-                  fontSize: SIZES.h3,
-                  paddingLeft: 12,
-                  paddingRight: 12,
-                }}
-                maxLength={5}
-                placeholder="Kode"
-                keyboardType="numeric"
-              />
-              <View
-                style={{
-                  marginTop: 12.5,
-                  width: 241,
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                }}
-              >
-                <TouchableOpacity
-                  style={{
-                    height: 50,
-                    width: 116,
-                    backgroundColor: COLORS.secondary,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    borderRadius: SIZES.radius,
-                  }}
-                  onPress={() => setModalVisible(!modalVisible)}
-                >
-                  <Text style={{ color: COLORS.primary, fontSize: SIZES.h3 }}>
-                    Batal
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={{
-                    height: 50,
-                    width: 116,
-                    backgroundColor: COLORS.primary,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    borderRadius: SIZES.radius,
-                  }}
-                  onPress={() => navigation.navigate("Beranda")}
-                >
-                  <Text style={{ color: COLORS.white, fontSize: SIZES.h3 }}>
-                    Lanjut
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        </Modal>
-      </View>
-    );
-  }
+  // function renderModal() {
+  //   return (
+  //     <View>
+  //       <Modal
+  //         animationType="slide"
+  //         transparent={true}
+  //         visible={modalVisible}
+  //         onRequestClose={() => setModalVisible(!modalVisible)}
+  //       >
+  //         <View
+  //           style={{
+  //             flex: 1,
+  //             justifyContent: "center",
+  //             alignItems: "center",
+  //           }}
+  //         >
+  //           <View
+  //             style={{
+  //               height: 237,
+  //               width: 303,
+  //               backgroundColor: COLORS.white,
+  //               borderRadius: SIZES.radius,
+  //               paddingTop: 14,
+  //               alignItems: "center",
+  //               shadowColor: "#838383",
+  //               shadowOffset: {
+  //                 width: 0,
+  //                 height: 2,
+  //               },
+  //               shadowOpacity: 0.25,
+  //               shadowRadius: 4,
+  //               elevation: 5,
+  //             }}
+  //           >
+  //             <Text
+  //               style={{
+  //                 color: COLORS.black,
+  //                 fontSize: 22,
+  //                 fontFamily: "Roboto",
+  //                 fontWeight: "bold",
+  //               }}
+  //             >
+  //               Gabung Tim
+  //             </Text>
+  //             <View style={{ maxWidth: 225, marginTop: 11 }}>
+  //               <Text style={{ fontSize: SIZES.body1, textAlign: "center" }}>
+  //                 Masukkan kode undangan yang Anda terima dari rekan Anda.
+  //               </Text>
+  //             </View>
+  //             <TextInput
+  //               style={{
+  //                 borderColor: COLORS.grey,
+  //                 borderWidth: 1,
+  //                 height: 58,
+  //                 width: 246,
+  //                 borderRadius: 6,
+  //                 marginTop: 11,
+  //                 fontSize: SIZES.h3,
+  //                 paddingLeft: 12,
+  //                 paddingRight: 12,
+  //               }}
+  //               maxLength={5}
+  //               placeholder="Kode"
+  //               keyboardType="numeric"
+  //             />
+  //             <View
+  //               style={{
+  //                 marginTop: 12.5,
+  //                 width: 241,
+  //                 flexDirection: "row",
+  //                 justifyContent: "space-between",
+  //               }}
+  //             >
+  //               <TouchableOpacity
+  //                 style={{
+  //                   height: 50,
+  //                   width: 116,
+  //                   backgroundColor: COLORS.secondary,
+  //                   justifyContent: "center",
+  //                   alignItems: "center",
+  //                   borderRadius: SIZES.radius,
+  //                 }}
+  //                 onPress={() => setModalVisible(!modalVisible)}
+  //               >
+  //                 <Text style={{ color: COLORS.primary, fontSize: SIZES.h3 }}>
+  //                   Batal
+  //                 </Text>
+  //               </TouchableOpacity>
+  //               <TouchableOpacity
+  //                 style={{
+  //                   height: 50,
+  //                   width: 116,
+  //                   backgroundColor: COLORS.primary,
+  //                   justifyContent: "center",
+  //                   alignItems: "center",
+  //                   borderRadius: SIZES.radius,
+  //                 }}
+  //                 onPress={() => navigation.navigate("Beranda")}
+  //               >
+  //                 <Text style={{ color: COLORS.white, fontSize: SIZES.h3 }}>
+  //                   Lanjut
+  //                 </Text>
+  //               </TouchableOpacity>
+  //             </View>
+  //           </View>
+  //         </View>
+  //       </Modal>
+  //     </View>
+  //   );
+  // }
 
   return (
     <View style={styles.container}>
@@ -180,7 +180,7 @@ export default function Scan({ navigation }) {
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
         style={StyleSheet.absoluteFillObject}
       />
-      {renderModal()}
+      {/* {renderModal()} */}
       <View
         style={{
           position: "absolute",

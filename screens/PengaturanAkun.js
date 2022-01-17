@@ -6,6 +6,7 @@ import {
   Image,
   Switch,
   TextInput,
+  StyleSheet,
 } from "react-native";
 import { SIZES, COLORS, icons, images, gif } from "../constants";
 import {
@@ -16,6 +17,7 @@ import {
   Feather,
 } from "@expo/vector-icons";
 import Modal from "react-native-modal";
+import { Dropdown } from "react-native-element-dropdown";
 
 const PengaturanAkun = ({ navigation }) => {
   const [toggle, setToggle] = useState(false);
@@ -39,6 +41,14 @@ const PengaturanAkun = ({ navigation }) => {
   const toggleModalPassSuccess = () => {
     setModalVisiblePass(!isModalVisiblePass);
   };
+
+  const [isFocus, setIsFocus] = useState(false);
+  const data = [
+    // { label: "Tipe Keanggotaan", value: 1 },
+    { label: "Pustakawan Senior", valueTipe: 1 },
+    { label: "Pustakawan", value: 2 },
+    { label: "Staff Perpustakaan", value: 3 },
+  ];
 
   function headerComponent() {
     const backToAktivitas = () => {
@@ -80,6 +90,7 @@ const PengaturanAkun = ({ navigation }) => {
   }
 
   function sectionOnePengaturanAkun() {
+    const [value, setValue] = useState(null);
     return (
       <View
         style={{
@@ -163,34 +174,30 @@ const PengaturanAkun = ({ navigation }) => {
 
         {/* Tipe Keanggotaan */}
         <View style={{ marginBottom: 14 }}>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              marginBottom: 14,
+          <Dropdown
+            style={styles.dropdown}
+            selectedTextStyle={styles.selectedTextStyle}
+            data={data}
+            maxHeight={160}
+            labelField="label"
+            valueField="value"
+            placeholder={data[0].label}
+            placeholderStyle={styles.placeholder}
+            value={value}
+            onFocus={() => setIsFocus(true)}
+            onChange={(item) => {
+              setValue(item.value);
+              setIsFocus(false);
             }}
-          >
-            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Tipe Keanggotaan
-            </Text>
-            <View style={{ flexDirection: "row" }}>
-              <Text
-                style={{
-                  maxWidth: 150,
-                  fontSize: SIZES.body1,
-                  color: COLORS.black,
-                }}
-              >
-                Pustakawan Senior
-              </Text>
-              <MaterialIcons
-                name="keyboard-arrow-right"
-                size={25}
+            renderRightIcon={() => (
+              <Ionicons
+                name="md-chevron-down"
+                size={24}
                 color={COLORS.grey}
-                style={{ marginLeft: 5 }}
+                style={{ marginTop: 5 }}
               />
-            </View>
-          </View>
+            )}
+          />
         </View>
 
         {/* Kata Sandi */}
@@ -384,7 +391,7 @@ const PengaturanAkun = ({ navigation }) => {
             color: COLORS.primary,
           }}
         >
-          Simpan
+          Perbarui Data Diri
         </Text>
       </TouchableOpacity>
       <View
@@ -657,3 +664,24 @@ const PengaturanAkun = ({ navigation }) => {
 };
 
 export default PengaturanAkun;
+
+const styles = StyleSheet.create({
+  dropdown: {
+    marginTop: -10,
+    marginBottom: 10,
+  },
+  placeholder: {
+    fontSize: SIZES.body1,
+    fontFamily: "Roboto",
+    // fontWeight: "bold",
+    color: COLORS.black,
+    marginRight: 10,
+  },
+  selectedTextStyle: {
+    fontSize: SIZES.body1,
+    fontFamily: "Roboto",
+    // fontWeight: "bold",
+    color: COLORS.black,
+    marginRight: 10,
+  },
+});

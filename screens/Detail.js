@@ -81,7 +81,7 @@ const Detail = ({ navigation }) => {
               }}
             >
               <Text style={{ fontSize: SIZES.body3, color: COLORS.black }}>
-                20178972
+                ISBN/ISSN: 9786024017941
               </Text>
             </View>
             <Text
@@ -92,7 +92,7 @@ const Detail = ({ navigation }) => {
                 marginTop: 6,
               }}
             >
-              Buku 1
+              Kimia 7 level
             </Text>
             <View
               style={{
@@ -109,10 +109,10 @@ const Detail = ({ navigation }) => {
                   marginRight: 6,
                 }}
               >
-                5
+                2
               </Text>
               <Text style={{ fontSize: SIZES.body3, color: COLORS.black }}>
-                eksemplar
+                salinan
               </Text>
             </View>
           </View>
@@ -130,7 +130,7 @@ const Detail = ({ navigation }) => {
           top: 40,
         }}
       >
-        {/* Kode bar */}
+        {/* Kode eksemplar */}
         <View style={{ marginBottom: 14 }}>
           <View
             style={{
@@ -140,7 +140,7 @@ const Detail = ({ navigation }) => {
             }}
           >
             <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Kode Bar
+              Kode Eksemplar
             </Text>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Text
@@ -150,24 +150,24 @@ const Detail = ({ navigation }) => {
                   marginRight: 10,
                 }}
               >
-                20178972
+                0000169594
               </Text>
               <MaterialCommunityIcons
                 name="barcode"
                 size={27}
                 color={COLORS.black}
               />
-              <MaterialIcons
+              {/* <MaterialIcons
                 name="keyboard-arrow-right"
                 size={25}
                 color={COLORS.grey}
                 style={{ marginLeft: 5 }}
-              />
+              /> */}
             </View>
           </View>
         </View>
 
-        {/* Jenis */}
+        {/* Penulis */}
         <View style={{ marginBottom: 14 }}>
           <View
             style={{
@@ -177,7 +177,7 @@ const Detail = ({ navigation }) => {
             }}
           >
             <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Jenis
+              Penulis
             </Text>
             <View style={{ flexDirection: "row" }}>
               <Text
@@ -187,13 +187,13 @@ const Detail = ({ navigation }) => {
                   color: COLORS.black,
                 }}
               >
-                Cetak
+                Sujana Helmy
               </Text>
             </View>
           </View>
         </View>
 
-        {/* Tahun Terbit */}
+        {/* Tipe Koleksi */}
         <View style={{ marginBottom: 14 }}>
           <View
             style={{
@@ -203,7 +203,7 @@ const Detail = ({ navigation }) => {
             }}
           >
             <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Tahun Terbit
+              Tipe Koleksi
             </Text>
             <View style={{ flexDirection: "row" }}>
               <Text
@@ -213,13 +213,13 @@ const Detail = ({ navigation }) => {
                   color: COLORS.black,
                 }}
               >
-                2017
+                textbook
               </Text>
             </View>
           </View>
         </View>
 
-        {/* Bidang Ilmu */}
+        {/* Perubahan Akhir */}
         <View style={{ marginBottom: 14 }}>
           <View
             style={{
@@ -229,7 +229,7 @@ const Detail = ({ navigation }) => {
             }}
           >
             <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Bidang Ilmu
+              Perubahan Akhir
             </Text>
             <View style={{ flexDirection: "row" }}>
               <Text
@@ -239,13 +239,13 @@ const Detail = ({ navigation }) => {
                   color: COLORS.black,
                 }}
               >
-                Sains
+                12/07/2021 14:03:22
               </Text>
             </View>
           </View>
         </View>
 
-        {/* Kelompok */}
+        {/* Nomor Panggil */}
         <View style={{ marginBottom: 14 }}>
           <View
             style={{
@@ -255,7 +255,7 @@ const Detail = ({ navigation }) => {
             }}
           >
             <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Kelompok
+              Nomor Panggil
             </Text>
             <View style={{ flexDirection: "row" }}>
               <Text
@@ -265,7 +265,33 @@ const Detail = ({ navigation }) => {
                   color: COLORS.black,
                 }}
               >
-                A01
+                618.92 Tin a
+              </Text>
+            </View>
+          </View>
+        </View>
+
+        {/* Klasifikasi */}
+        <View style={{ marginBottom: 14 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginBottom: 14,
+            }}
+          >
+            <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
+              Klasifikasi
+            </Text>
+            <View style={{ flexDirection: "row" }}>
+              <Text
+                style={{
+                  maxWidth: 150,
+                  fontSize: SIZES.body1,
+                  color: COLORS.black,
+                }}
+              >
+                336.185
               </Text>
             </View>
           </View>
@@ -291,14 +317,14 @@ const Detail = ({ navigation }) => {
                   color: COLORS.black,
                 }}
               >
-                Tersedia
+                Ada
               </Text>
             </View>
           </View>
         </View>
 
         {/* Keterangan */}
-        <View style={{ marginBottom: 14 }}>
+        {/* <View style={{ marginBottom: 14 }}>
           <View
             style={{
               flexDirection: "row",
@@ -321,7 +347,7 @@ const Detail = ({ navigation }) => {
               </Text>
             </View>
           </View>
-        </View>
+        </View> */}
       </View>
     );
   }

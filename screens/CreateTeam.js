@@ -123,12 +123,12 @@ const CreateTeam = ({ navigation }) => {
             style={{
               fontSize: SIZES.body1,
               marginRight: 7,
-              color: COLORS.primary,
+              color: COLORS.black,
             }}
           >
             {text}
           </Text>
-          <AntDesign name="calendar" size={26} color={COLORS.primary} />
+          <AntDesign name="calendar" size={26} color={COLORS.black} />
         </TouchableOpacity>
         {/* </View> */}
         {show && (
@@ -168,12 +168,12 @@ const CreateTeam = ({ navigation }) => {
             style={{
               fontSize: SIZES.body1,
               marginRight: 7,
-              color: COLORS.primary,
+              color: COLORS.black,
             }}
           >
             {textSelesai}
           </Text>
-          <AntDesign name="calendar" size={26} color={COLORS.primary} />
+          <AntDesign name="calendar" size={26} color={COLORS.black} />
         </TouchableOpacity>
         {/* </View> */}
         {showSelesai && (
@@ -227,14 +227,14 @@ const CreateTeam = ({ navigation }) => {
             borderWidth: 2,
             borderRadius: SIZES.radius,
             height: 50,
-            color: COLORS.primary,
+            color: COLORS.black,
             fontFamily: "Roboto",
             fontSize: 16,
             marginBottom: SIZES.padding2 * 2,
           }}
           placeholder="Nama tim"
           placeholderTextColor={COLORS.grey}
-          selectionColor={COLORS.primary}
+          selectionColor={COLORS.black}
         />
         <TextInput
           style={{
@@ -246,7 +246,7 @@ const CreateTeam = ({ navigation }) => {
             borderWidth: 2,
             borderRadius: SIZES.radius,
             height: 139,
-            color: COLORS.primary,
+            color: COLORS.black,
             fontFamily: "Roboto",
             fontSize: 16,
             marginBottom: SIZES.padding2 * 2,
@@ -254,7 +254,7 @@ const CreateTeam = ({ navigation }) => {
           placeholder="Catatan"
           maxLength={300}
           placeholderTextColor={COLORS.grey}
-          selectionColor={COLORS.primary}
+          selectionColor={COLORS.black}
           multiline={true}
           numberOfLines={10}
           textAlignVertical="top"
@@ -313,7 +313,7 @@ const CreateTeam = ({ navigation }) => {
               color: COLORS.black,
             }}
           >
-            Buat Profil Tim Kamu
+            Buat Profil Tim Inventarisasi Kamu
           </Text>
           <Image
             source={images.grup}

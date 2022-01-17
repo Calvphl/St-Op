@@ -73,7 +73,7 @@ const PilihTim = ({ navigation }) => {
             color: COLORS.black,
           }}
         >
-          Stock Opname Tesis
+          Stock Opname 2022
         </Text>
         <View
           style={{
@@ -97,7 +97,7 @@ const PilihTim = ({ navigation }) => {
                   marginRight: 28,
                 }}
               >
-                30
+                1476 eksemplar
               </Text>
             </View>
             <View style={{ flexDirection: "row" }}>
@@ -113,7 +113,7 @@ const PilihTim = ({ navigation }) => {
                   marginLeft: 4,
                 }}
               >
-                5
+                5 orang
               </Text>
             </View>
           </View>

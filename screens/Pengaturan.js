@@ -130,10 +130,10 @@ const Pengaturan = ({ navigation }) => {
                 color: COLORS.white,
               }}
             >
-              Stock Opname Tesis
+              Stock Opname 2022
             </Text>
             <Text style={{ fontSize: SIZES.body2, color: COLORS.white }}>
-              scan tesis | Anggota 5
+              scan koleksi buku | Anggota 5
             </Text>
           </View>
         </View>
@@ -176,7 +176,7 @@ const Pengaturan = ({ navigation }) => {
             marginBottom: 12,
           }}
         >
-          Kelola Tim
+          Kelola Tim Inventarisasi
         </Text>
 
         {/* Nama Tim */}
@@ -189,11 +189,11 @@ const Pengaturan = ({ navigation }) => {
             }}
           >
             <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Nama Tim
+              Nama Inventarisasi
             </Text>
             <View style={{ flexDirection: "row" }}>
               <TextInput
-                placeholder="Stock Opname Tesis"
+                placeholder="Stock Opname 2022"
                 placeholderTextColor={COLORS.black}
                 style={{
                   maxWidth: 150,
@@ -221,11 +221,11 @@ const Pengaturan = ({ navigation }) => {
             }}
           >
             <Text style={{ fontSize: SIZES.body1, color: COLORS.black }}>
-              Catatan Tim
+              Catatan Inventarisasi
             </Text>
             <View style={{ flexDirection: "row" }}>
               <TextInput
-                placeholder="scan tesis"
+                placeholder="scan koleksi buku"
                 placeholderTextColor={COLORS.black}
                 numberOfLines={3}
                 style={{
@@ -520,7 +520,7 @@ const Pengaturan = ({ navigation }) => {
             // marginTop: 20,
           }}
         >
-          Simpan
+          Perbarui
         </Text>
       </TouchableOpacity>
       {/* {pendukung()} */}
